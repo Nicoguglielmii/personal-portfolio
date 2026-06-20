@@ -1,7 +1,5 @@
 # Nicola Guglielmi — Personal Portfolio 🎾
 
-![Portfolio Preview](assets/images/og-image.jpg)
-
 > A personal portfolio website built around the idea of discipline, consistency and continuous improvement — the same mindset that connects tennis and software development.
 
 🔗 **Live Website:** https://nicoguglielmii.github.io/personal-portfolio/
