@@ -1,129 +1,139 @@
-# Nicola Guglielmi — Personal Portfolio
+# Nicola Guglielmi — Personal Portfolio 🎾
 
-A personal portfolio website for **Nicola Guglielmi**, an IT & Telecommunications student from Andria, Italy.
+![Portfolio Preview](assets/images/og-image.jpg)
 
-The website is inspired by the elegance and discipline of tennis: a **Centre Court design language** that combines minimalist aesthetics, Wimbledon-inspired colors, scoreboard-style sections and the mindset of continuous improvement applied to software development.
+> A personal portfolio website built around the idea of discipline, consistency and continuous improvement — the same mindset that connects tennis and software development.
 
-🔗 **Live website:** https://nicoguglielmii.github.io/Portfolio/
-
----
-
-## About the project
-
-This portfolio is a single-page website created to present my journey as a young developer, my technical skills, my education and my first professional experiences.
-
-The design philosophy connects tennis and programming:
-
-> Long-term goals are achieved through consistency, repetition and daily improvement.
-
-The project includes:
-
-- **Hero section** — personal introduction and developer identity
-- **About section** — background, mindset and personal statistics
-- **Experience section** — professional experience and projects completed
-- **Education section** — IT & Telecommunications studies at ITT Sen. O. Jannuzzi
-- **Skills section** — programming languages, web technologies and digital competencies
-- **Certifications section** — achieved certifications and learning path
-- **Projects section** — selected development projects
-- **Tennis Philosophy section** — connection between sport discipline and software development
-- **Contact section** — social links and communication details
+🔗 **Live Website:** https://nicoguglielmii.github.io/personal-portfolio/
 
 ---
 
-## Technologies
+## About
 
-Built with:
+Hi, I'm **Nicola Guglielmi**, an IT & Telecommunications student from **Andria, Italy**.
 
-- **HTML5** — semantic structure and SEO-friendly markup
-- **CSS3** — custom design system, CSS variables, Grid, Flexbox, animations and responsive layouts
-- **Vanilla JavaScript** — interactive components, dark mode, animations and UI behaviour
+This portfolio represents my journey into software development, combining my passion for technology with the values I learned through tennis: patience, repetition and long-term growth.
 
-No frameworks, no dependencies and no build tools are required.
+The design takes inspiration from the elegance of a tennis Centre Court, with a minimal aesthetic based on:
 
-The website runs directly in the browser.
+* Wimbledon-inspired green tones
+* chalk and court-line details
+* scoreboard-style components
+* a focus on precision and simplicity
 
 ---
 
 ## Features
 
-- Responsive design for desktop, tablet and mobile
-- Light / dark mode with saved user preference
-- Scroll reveal animations
-- Interactive "Centre Court" experience timeline
-- Animated skill progress bars
-- Accessible navigation and focus states
-- SEO meta tags and social preview support
-- Optimized static deployment with GitHub Pages
+🏟️ **Centre Court Experience Section**
+An interactive timeline where experiences are represented as points on a tennis court.
+
+🌗 **Dark / Light Mode**
+A custom theme system with saved user preferences.
+
+📊 **Skills Scoreboard**
+Animated skill indicators inspired by tennis statistics.
+
+🎾 **Tennis Philosophy Section**
+A section connecting sports mentality with programming discipline, featuring ideas from champions such as Roger Federer and Jannik Sinner.
+
+📱 **Responsive Design**
+Optimized for desktop, tablet and mobile devices.
 
 ---
 
-## Run locally
+## Technologies
+
+Built from scratch using:
+
+* **HTML5** — semantic structure and SEO metadata
+* **CSS3** — custom design system, variables, animations, Grid and Flexbox
+* **JavaScript (Vanilla)** — interactions, theme switching and animations
+
+No frameworks.
+No dependencies.
+Just clean frontend code.
+
+---
+
+## Project Structure
+
+```
+personal-portfolio/
+│
+├── index.html        # Main website structure
+├── style.css         # Design system and styling
+├── script.js         # Interactive features
+│
+├── assets/
+│   ├── images/       # Images and visual assets
+│   └── icons/        # Website icons
+│
+└── README.md
+```
+
+---
+
+## Run Locally
 
 Clone the repository:
 
 ```bash
-git clone https://github.com/nicoguglielmii/Portfolio.git
+git clone https://github.com/Nicoguglielmii/personal-portfolio.git
+```
 
-Move into the project folder:
+Open the project folder:
 
-cd Portfolio
+```bash
+cd personal-portfolio
+```
 
-Open index.html directly in your browser or start a local server:
+Run it locally:
 
-python3 -m http.server 8000
+```bash
+python -m http.server 8000
+```
 
-Then visit:
+Then open:
 
+```
 http://localhost:8000
-Deployment
+```
 
-The website is deployed using GitHub Pages.
+---
 
-Every update can be published with:
+## Deployment
 
-git add .
-git commit -m "Update portfolio"
-git push
+The website is deployed with **GitHub Pages**.
 
-GitHub Actions automatically rebuilds and deploys the latest version.
+Every update pushed to the `main` branch is automatically published online.
 
-Project structure
-.
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   └── icons/
-└── README.md
-Design inspiration
+---
 
-The visual identity takes inspiration from tennis environments such as:
+## Philosophy
 
-Centre Court atmosphere
-Wimbledon elegance
-Roland Garros clay tones
-Tennis scoreboard interfaces
+> "The work never stops."
+> — Jannik Sinner
 
-The goal was not to create a fan website, but a professional developer portfolio where sport becomes a metaphor for learning, discipline and growth.
+> "You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."
+> — Roger Federer
 
-Philosophy
+This portfolio follows the same principle:
 
-Two ideas that represent the mindset behind this project:
+**build consistently, improve every day, and trust the process.**
 
-"The work never stops."
-— Jannik Sinner
+---
 
-"You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."
-— Roger Federer
+## Author
 
-Author
-
-Nicola Guglielmi
+**Nicola Guglielmi**
 
 IT & Telecommunications Student
 Andria, Italy
 
-GitHub: https://github.com/nicoguglielmii
+* GitHub: https://github.com/Nicoguglielmii
+* Portfolio: https://nicoguglielmii.github.io/personal-portfolio/
 
-"Victory belongs to the most tenacious."
+---
+
+*"Victory belongs to the most tenacious."*
