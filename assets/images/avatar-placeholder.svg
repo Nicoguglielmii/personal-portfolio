@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-labelledby="avatarTitle">
+  <title id="avatarTitle">Placeholder portrait monogram for Nicola Guglielmi — replace with a real photo</title>
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="200" cy="200" r="172" />
+    </clipPath>
+  </defs>
+
+  <!-- outer dashed "court line" ring -->
+  <circle cx="200" cy="200" r="194" fill="none" stroke="#C8A951" stroke-width="1.5" stroke-dasharray="2 8" opacity="0.6"/>
+
+  <!-- base -->
+  <circle cx="200" cy="200" r="172" fill="#E4ECE5"/>
+
+  <g clip-path="url(#circleClip)">
+    <!-- soft grass-green field -->
+    <rect x="0" y="0" width="400" height="400" fill="#E4ECE5"/>
+    <!-- faint baseline + service line motif -->
+    <line x1="28" y1="300" x2="372" y2="300" stroke="#14532D" stroke-width="3" opacity="0.18"/>
+    <line x1="28" y1="245" x2="372" y2="245" stroke="#14532D" stroke-width="2" opacity="0.12"/>
+    <line x1="200" y1="245" x2="200" y2="300" stroke="#14532D" stroke-width="2" opacity="0.12"/>
+  </g>
+
+  <!-- monogram -->
+  <text x="200" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="140" font-weight="600" fill="#14532D">NG</text>
+
+  <!-- ring -->
+  <circle cx="200" cy="200" r="172" fill="none" stroke="#14532D" stroke-width="2"/>
+</svg>
