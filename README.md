@@ -39,11 +39,11 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 
 ## Features
 
-🏟️ **Interactive Centre Court** — career entries as points on a tennis court; the ball travels to whichever one you select.
+🏟️ **Interactive Centre Court / Court Philippe-Chatrier** — career entries as points on a vertical tennis court (green for Wimbledon, clay for Roland Garros); clicking a card triggers a live score animation (15–0 → 30–0 → 40–0 → Game · Set · Match).
 
-📊 **Score Strip** — a slim, sticky progress line under the navbar. Sections you've scrolled past go green, the current one lights up in clay and expands to show its name, the rest stay collapsed to a bare number. Built on the same `IntersectionObserver` already used for scroll reveals — no new dependency.
+📊 **Score Strip** — a slim, sticky progress line under the navbar. Sections you've scrolled past go green (or orange at Roland Garros), the current one lights up and expands to show its name, the rest stay collapsed to a bare number. Built on the same `IntersectionObserver` already used for scroll reveals — no new dependency.
 
-🌗 **Dark / Light mode** — custom theming, saved preference, `prefers-color-scheme` fallback.
+🎾 **Dual Court theme** — switch between **Wimbledon** (light green palette) and **Roland Garros** (dark brown / clay palette) with a single button. The court name in the Ranking section, the footer photo, and all accent colours update instantly.
 
 🌍 **Bilingual IT/EN** — every string toggles live via `data-it` / `data-en` attributes, no reload.
 
@@ -55,6 +55,18 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 
 ♿ **Accessible by default** — skip-to-content link, visible focus states, semantic landmarks, `aria-label`s on icon-only controls.
 
+## Screenshots
+
+> Replace these placeholders with real captures before publishing — `assets/images/screenshots/`.
+
+| Hero | Centre Court | Projects |
+|---|---|---|
+| ![Hero section](assets/images/screenshots/hero.png) | ![Interactive Centre Court](assets/images/screenshots/centre-court.png) | ![Project case studies](assets/images/screenshots/projects.png) |
+
+| Light mode | Dark mode |
+|---|---|
+| ![Light theme](assets/images/screenshots/light.png) | ![Dark theme](assets/images/screenshots/dark.png) |
+
 ## Design system
 
 | Token / pattern | Role |
@@ -62,11 +74,12 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 | `--font-display` (Fraunces) | Section titles and hero only |
 | `--font-body` (Inter) | Body copy |
 | `--font-mono` (Space Mono) | Reserved for "match data": scores, percentages, dates, project indices, Score Strip |
-| `--color-green` | Brand identity, primary CTAs |
-| `--color-clay` | Active state — Score Strip, active Centre Court entry — never decorative |
+| `--accent` green | Wimbledon theme — brand identity, primary CTAs |
+| `--accent` clay | Roland Garros theme — active state, never decorative |
 | `--color-gold` | Trophies / achievement context |
 | `.score-panel` | Player-card component (hero) |
-| `.cc-field` / `.cc-entry` | Centre Court career timeline |
+| `.cc-field` / `.cc-entry` | Centre Court career timeline — vertical SVG court, score animation |
+| `.cc-score-badge` | Live score badge per card (15–0 → 30–0 → 40–0 → Game) |
 | `.skills-board` / `.skill-row` | Scoreboard skill bars |
 | `.project-card` / `.case-study` | Match case study |
 | `.score-strip-item` | Scoreline step (Score Strip) |
@@ -124,6 +137,15 @@ Build consistently. Improve every day. Trust the process.
 **Nicola Guglielmi** — IT & Telecommunications Student, Andria, Italy
 GitHub: https://github.com/Nicoguglielmii · Portfolio: https://nicoguglielmii.github.io/personal-portfolio/
 
+## Contact
+
+Open to internships, school-work placements, and small freelance collaborations.
+
+* 📧 **Email:** [nicolaguglielmii09k@gmail.com](mailto:nicolaguglielmii09k@gmail.com)
+* 💻 **GitHub:** [github.com/Nicoguglielmii](https://github.com/Nicoguglielmii)
+* 🌐 **Live site:** [nicoguglielmii.github.io/personal-portfolio](https://nicoguglielmii.github.io/personal-portfolio/)
+* 📍 **Based in:** Andria (BT), Apulia, Italy
+
 ---
 
 *"Victory belongs to the most tenacious."*
@@ -154,11 +176,11 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 
 ## Caratteristiche
 
-🏟️ **Centre Court interattivo** — le esperienze come punti su un campo da tennis; la pallina si sposta su quella che selezioni.
+🏟️ **Centre Court / Court Philippe-Chatrier interattivo** — le esperienze come punti su un campo da tennis verticale (verde per Wimbledon, terra per Roland Garros); cliccando una card parte un'animazione del punteggio (15–0 → 30–0 → 40–0 → Game · Set · Match).
 
-📊 **Score Strip** — una riga sottile e sticky sotto la navbar. Le sezioni già scrollate diventano verdi, quella attuale si accende in clay ed espande il proprio nome, le altre restano numeri compatti. Costruita sullo stesso `IntersectionObserver` già usato per le reveal in scroll — nessuna nuova dipendenza.
+📊 **Score Strip** — una riga sottile e sticky sotto la navbar. Le sezioni già scrollate si colorano con il colore del campo, quella attuale si accende ed espande il proprio nome, le altre restano numeri compatti. Costruita sullo stesso `IntersectionObserver` già usato per le reveal in scroll — nessuna nuova dipendenza.
 
-🌗 **Modalità chiara/scura** — tema personalizzato, preferenza salvata, fallback su `prefers-color-scheme`.
+🎾 **Doppio tema campo** — passa da **Wimbledon** (palette verde chiaro) a **Roland Garros** (palette marrone scuro / terra) con un solo pulsante. Il nome del campo nella sezione Ranking, la foto nel footer e tutti i colori di accento si aggiornano in tempo reale.
 
 🌍 **Bilingue IT/EN** — ogni stringa cambia live tramite attributi `data-it` / `data-en`, senza ricaricare.
 
@@ -169,6 +191,18 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 ✨ **Micro-interazioni** — ripple al click, tilt 3D sulla scheda giocatore, numeri animati — tutto nel rispetto di `prefers-reduced-motion`.
 
 ♿ **Accessibile di default** — skip-link, stati di focus visibili, landmark semantici, `aria-label` sui controlli a sola icona.
+
+## Screenshot
+
+> Sostituisci questi placeholder con catture reali prima della pubblicazione — `assets/images/screenshots/`.
+
+| Hero | Centre Court | Progetti |
+|---|---|---|
+| ![Sezione hero](assets/images/screenshots/hero.png) | ![Centre Court interattivo](assets/images/screenshots/centre-court.png) | ![Case study progetti](assets/images/screenshots/projects.png) |
+
+| Tema chiaro | Tema scuro |
+|---|---|
+| ![Tema chiaro](assets/images/screenshots/light.png) | ![Tema scuro](assets/images/screenshots/dark.png) |
 
 ## Design system
 
@@ -238,6 +272,15 @@ Costruire con costanza. Migliorare ogni giorno. Fidarsi del processo.
 
 **Nicola Guglielmi** — Studente di Informatica e Telecomunicazioni, Andria, Italia
 GitHub: https://github.com/Nicoguglielmii · Portfolio: https://nicoguglielmii.github.io/personal-portfolio/
+
+## Contatti
+
+Aperto a stage, tirocini scuola-lavoro e piccole collaborazioni freelance.
+
+* 📧 **Email:** [nicolaguglielmii09k@gmail.com](mailto:nicolaguglielmii09k@gmail.com)
+* 💻 **GitHub:** [github.com/Nicoguglielmii](https://github.com/Nicoguglielmii)
+* 🌐 **Sito live:** [nicoguglielmii.github.io/personal-portfolio](https://nicoguglielmii.github.io/personal-portfolio/)
+* 📍 **Sede:** Andria (BT), Puglia, Italia
 
 ---
 

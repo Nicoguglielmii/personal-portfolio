@@ -3,30 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nicola Guglielmi — GOAT</title>
-  <meta name="description" content="Portfolio personale di Nicola Guglielmi — studente di Informatica e Telecomunicazioni ad Andria, che costruisce software con la stessa concentrazione e disciplina di un tennista.">
+  <title>Nicola Guglielmi · Portfolio</title>
+  <meta name="description" content="Portfolio di Nicola Guglielmi — studente IT da Andria che costruisce software con la stessa disciplina e concentrazione di un tennista.">
   <meta name="author" content="Nicola Guglielmi">
-  <meta name="theme-color" content="#14532d">
-
-  <!-- Open Graph -->
+  <meta name="theme-color" content="#0E5C2D">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Nicola Guglielmi — Aspirante Sviluppatore Web & Software">
-  <meta property="og:description" content="Portfolio di uno studente di Informatica che tratta il codice come il Centre Court: precisione, pazienza, un punto alla volta.">
+  <meta property="og:title" content="Nicola Guglielmi — Portfolio">
+  <meta property="og:description" content="Un punto alla volta.">
   <meta property="og:image" content="assets/images/og-image.jpg">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Theme transition overlay (broadcast atmosphere shift) -->
+  <div class="court-transition-overlay" id="courtOverlay" aria-hidden="true">
+    <svg class="court-transition-ball" viewBox="0 0 40 40" aria-hidden="true">
+      <circle cx="20" cy="20" r="18" fill="#D7E94A"/>
+      <path d="M3 11 C 15 17, 15 23, 3 29" fill="none" stroke="#F4FAD1" stroke-width="2.2" stroke-linecap="round"/>
+      <path d="M37 11 C 25 17, 25 23, 37 29" fill="none" stroke="#F4FAD1" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+
   <a class="skip-link" href="#main" data-it="Vai al contenuto" data-en="Skip to content">Vai al contenuto</a>
 
-  <!-- ============================= NAVBAR ============================= -->
+  <!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
   <header class="navbar" id="navbar">
     <div class="container">
       <a href="#hero" class="brand">
@@ -35,93 +40,102 @@
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Principale">
-        <a href="#about"          data-it="Profilo"    data-en="Profile">Profilo</a>
-        <a href="#experience"     data-it="Ranking"    data-en="Ranking">Ranking</a>
-        <a href="#education"      data-it="Tabellone"  data-en="Draw">Tabellone</a>
-        <a href="#skills"         data-it="Scoreboard" data-en="Scoreboard">Scoreboard</a>
-        <a href="#certifications" data-it="Trofei"     data-en="Trophies">Trofei</a>
-        <a href="#projects"       data-it="Match"      data-en="Matches">Match</a>
-        <a href="#philosophy"     data-it="Filosofia"  data-en="Philosophy">Filosofia</a>
+        <a href="#about"          data-it="Profilo"     data-en="Profile">Profilo</a>
+        <a href="#experience"     data-it="Ranking"     data-en="Ranking">Ranking</a>
+        <a href="#education"      data-it="Tabellone"   data-en="Draw">Tabellone</a>
+        <a href="#skills"         data-it="Scoreboard"  data-en="Scoreboard">Scoreboard</a>
+        <a href="#certifications" data-it="Trofei"      data-en="Trophies">Trofei</a>
+        <a href="#projects"       data-it="Match"       data-en="Matches">Match</a>
+        <a href="#philosophy"     data-it="Filosofia"   data-en="Philosophy">Filosofia</a>
         <a href="#contact"        data-it="Match Point" data-en="Match Point">Match Point</a>
       </nav>
 
       <div class="nav-actions">
+        <!-- Court Switch -->
+        <button class="court-switch" id="courtSwitch" type="button" aria-label="Cambia campo / Switch court">
+          <span class="cs-ball" aria-hidden="true"></span>
+          <span class="cs-label" id="courtSwitchLabel">Roland Garros</span>
+        </button>
+
+        <!-- Lang toggle -->
         <div class="lang-toggle" role="group" aria-label="Lingua / Language">
           <button type="button" id="langIT" class="is-active" aria-pressed="true">IT</button>
           <button type="button" id="langEN" aria-pressed="false">EN</button>
         </div>
-        <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Attiva/disattiva modalità scura">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Apri/chiudi menu" aria-controls="navLinks" aria-expanded="false">
-          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+
+        <!-- Mobile menu -->
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Apri menu" aria-controls="navLinks" aria-expanded="false">
+          <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="width:16px;height:16px"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
         </button>
       </div>
     </div>
   </header>
 
-  <!-- ============================= SCORE STRIP ============================= -->
+  <!-- ═══════════════════════════ SCORE STRIP ════════════════════════════ -->
   <nav class="score-strip" id="scoreStrip" aria-label="Avanzamento del match">
-    <div class="container score-strip-track" id="scoreStripTrack">
+    <div class="container score-strip-track">
       <button class="score-strip-item" type="button" data-target="about">
-        <span class="ss-num" aria-hidden="true">01</span><span class="ss-label" data-it="Profilo" data-en="Profile">Profilo</span>
+        <span class="ss-num">01</span><span class="ss-label" data-it="Profilo" data-en="Profile">Profilo</span>
       </button>
       <button class="score-strip-item" type="button" data-target="experience">
-        <span class="ss-num" aria-hidden="true">02</span><span class="ss-label" data-it="Ranking" data-en="Ranking">Ranking</span>
+        <span class="ss-num">02</span><span class="ss-label" data-it="Ranking" data-en="Ranking">Ranking</span>
       </button>
       <button class="score-strip-item" type="button" data-target="education">
-        <span class="ss-num" aria-hidden="true">03</span><span class="ss-label" data-it="Tabellone" data-en="Draw">Tabellone</span>
+        <span class="ss-num">03</span><span class="ss-label" data-it="Tabellone" data-en="Draw">Tabellone</span>
       </button>
       <button class="score-strip-item" type="button" data-target="skills">
-        <span class="ss-num" aria-hidden="true">04</span><span class="ss-label" data-it="Scoreboard" data-en="Scoreboard">Scoreboard</span>
+        <span class="ss-num">04</span><span class="ss-label" data-it="Scoreboard" data-en="Scoreboard">Scoreboard</span>
       </button>
       <button class="score-strip-item" type="button" data-target="certifications">
-        <span class="ss-num" aria-hidden="true">05</span><span class="ss-label" data-it="Trofei" data-en="Trophies">Trofei</span>
+        <span class="ss-num">05</span><span class="ss-label" data-it="Trofei" data-en="Trophies">Trofei</span>
       </button>
       <button class="score-strip-item" type="button" data-target="projects">
-        <span class="ss-num" aria-hidden="true">06</span><span class="ss-label" data-it="Match" data-en="Matches">Match</span>
+        <span class="ss-num">06</span><span class="ss-label" data-it="Match" data-en="Matches">Match</span>
       </button>
       <button class="score-strip-item" type="button" data-target="philosophy">
-        <span class="ss-num" aria-hidden="true">07</span><span class="ss-label" data-it="Filosofia" data-en="Philosophy">Filosofia</span>
+        <span class="ss-num">07</span><span class="ss-label" data-it="Filosofia" data-en="Philosophy">Filosofia</span>
       </button>
       <button class="score-strip-item" type="button" data-target="contact">
-        <span class="ss-num" aria-hidden="true">08</span><span class="ss-label" data-it="Match Point" data-en="Match Point">Match Point</span>
+        <span class="ss-num">08</span><span class="ss-label" data-it="Match Point" data-en="Match Point">Match Point</span>
       </button>
     </div>
   </nav>
 
   <main id="main">
-    <!-- ============================= HERO ============================= -->
+
+    <!-- ═══════════════════════════════ HERO ══════════════════════════════ -->
     <section class="hero" id="hero">
+      <!-- Court lines background -->
       <div class="hero-court" aria-hidden="true">
-        <svg viewBox="0 0 1200 700" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-          <rect x="60" y="40" width="1080" height="620" fill="none" stroke="var(--color-line)" stroke-width="2"/>
-          <rect x="130" y="40" width="940" height="620" fill="none" stroke="var(--color-line)" stroke-width="1.5"/>
-          <line x1="60" y1="350" x2="1140" y2="350" stroke="var(--color-line)" stroke-width="1.5"/>
-          <line x1="600" y1="160" x2="600" y2="540" stroke="var(--color-line)" stroke-width="1.5"/>
-          <line x1="280" y1="160" x2="920" y2="160" stroke="var(--color-line)" stroke-width="1.5"/>
-          <line x1="280" y1="540" x2="920" y2="540" stroke="var(--color-line)" stroke-width="1.5"/>
-          <line x1="600" y1="40" x2="600" y2="60" stroke="var(--color-line)" stroke-width="2"/>
-          <line x1="600" y1="640" x2="600" y2="660" stroke="var(--color-line)" stroke-width="2"/>
+        <svg viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice">
+          <rect x="60" y="40" width="1080" height="620" fill="none" stroke="var(--court-line)" stroke-width="2"/>
+          <rect x="130" y="40" width="940" height="620" fill="none" stroke="var(--court-line)" stroke-width="1.5"/>
+          <line x1="60" y1="350" x2="1140" y2="350" stroke="var(--court-line)" stroke-width="1.5"/>
+          <line x1="600" y1="160" x2="600" y2="540" stroke="var(--court-line)" stroke-width="1.5"/>
+          <line x1="280" y1="160" x2="920" y2="160" stroke="var(--court-line)" stroke-width="1.5"/>
+          <line x1="280" y1="540" x2="920" y2="540" stroke="var(--court-line)" stroke-width="1.5"/>
+          <line x1="600" y1="40" x2="600" y2="60" stroke="var(--court-line)" stroke-width="2"/>
+          <line x1="600" y1="640" x2="600" y2="660" stroke="var(--court-line)" stroke-width="2"/>
         </svg>
       </div>
 
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="hero-eyebrow"><span class="dot"></span>Andria, Italia</p>
+          <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Andria, Italia</p>
           <h1 data-it="Un punto<br><span class='accent'>alla volta.</span>" data-en="One point<br><span class='accent'>at a time.</span>">Un punto<br><span class="accent">alla volta.</span></h1>
+
           <p class="hero-role"
              data-it="Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class='accent'>leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte."
              data-en="Nicola Guglielmi — I build software the same way I play a match: <span class='accent'>read the situation, execute</span>, and when it doesn't work, try again. Better, not harder.">Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class="accent">leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte.</p>
+
           <p class="hero-lead"
              data-it="Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno."
-             data-en="I'm 17 and based in Andria, Puglia. I split my days between the court and the keyboard — in both, results come from repetition, attention to detail, and the will to get a little better with every round.">Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno.</p>
+             data-en="I'm 17 and based in Andria, Puglia. I split my days between the court and the keyboard — in both, results come from repetition, attention to detail, and the will to improve with every round.">Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno.</p>
 
           <div class="hero-cta">
-            <a href="#projects" class="btn btn--primary" data-it="Guarda i match" data-en="See the matches">Guarda i match</a>
-            <a href="#contact"  class="btn btn--ghost"   data-it="Contattami"             data-en="Get in touch">Contattami</a>
+            <a href="#projects" class="btn btn--primary" data-it="Guarda i mieimatch" data-en="See my matches">Guarda i miei match</a>
+            <a href="#contact"  class="btn btn--ghost"   data-it="Contattami"     data-en="Get in touch">Contattami</a>
           </div>
 
           <div class="hero-meta">
@@ -134,50 +148,60 @@
               <span data-it="Livello d'inglese" data-en="English level">Livello d'inglese</span>
             </div>
             <div class="hero-meta-item">
-              <strong>Python · Java · C#</strong>
+              <strong>Python · Java · C</strong>
               <span data-it="Linguaggi principali" data-en="Main languages">Linguaggi principali</span>
             </div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
-          <div class="score-panel">
+          <div class="score-panel" id="scorePanel">
             <div class="score-panel-head">
               <span data-it="Scheda Giocatore" data-en="Player Card">Scheda Giocatore</span>
               <span>2026</span>
             </div>
             <div class="score-panel-row">
-              <span class="label" data-it="Nome" data-en="Name">Nome</span>
+              <span class="label" data-it="Nome"   data-en="Name">Nome</span>
               <span class="value">N. Guglielmi</span>
             </div>
             <div class="score-panel-row">
-              <span class="label" data-it="Base" data-en="Based in">Base</span>
+              <span class="label" data-it="Base"   data-en="Based in">Base</span>
               <span class="value">Andria, IT</span>
             </div>
             <div class="score-panel-row">
-              <span class="label" data-it="Studi" data-en="Studies">Studi</span>
+              <span class="label" data-it="Studi"  data-en="Studies">Studi</span>
               <span class="value" data-it="IT e Telecom" data-en="IT &amp; Telecom">IT e Telecom</span>
             </div>
             <div class="score-panel-row">
               <span class="label" data-it="Lingue" data-en="Languages">Lingue</span>
               <span class="value">IT / EN B2</span>
             </div>
-            <div class="score-panel-foot" data-it="La vittoria appartiene ai più tenaci" data-en="Victory belongs to the most tenacious">La vittoria appartiene ai più tenaci</div>
+            <div class="score-panel-court">
+              <span class="score-panel-court-dot" aria-hidden="true"></span>
+              <span class="score-panel-court-label" id="courtLabel">Wimbledon</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <div class="court-divider" aria-hidden="true">
-      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle cx="600" cy="14" r="3" fill="var(--color-line-strong)" stroke="none"/></svg>
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
     </div>
 
-    <!-- ============================= ABOUT ============================= -->
+    <!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
     <section class="section section--surface" id="about">
       <div class="container">
         <div class="about-grid">
           <div class="about-portrait reveal">
-            <img src="assets/images/avatar-placeholder.svg" alt="Monogramma di Nicola Guglielmi" width="400" height="400">
+            <div class="about-portrait-wrap">
+              <img src="assets/images/avatar-placeholder.svg" alt="Nicola Guglielmi" width="260" height="260" loading="lazy" decoding="async">
+            </div>
+            <!-- Quote badge changes with court -->
+            <div class="about-quote-badge">
+              <blockquote id="aboutQuoteText">"If you can meet with Triumph and Disaster and treat those two impostors just the same"</blockquote>
+              <cite id="aboutQuoteCite" data-it="Iscrizione nell'ingresso degli spogliatoi, Wimbledon" data-en="Inscription above the players' entrance, Wimbledon">Iscrizione nell'ingresso degli spogliatoi, Wimbledon</cite>
+            </div>
           </div>
 
           <div class="about-text reveal">
@@ -187,27 +211,28 @@
                 data-en="Patience, repetition and a long-term plan">Pazienza, ripetizione e un piano a lungo termine</h2>
 
             <p style="margin-top:1.4rem;"
-               data-it="Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma di Istruzione Secondaria Superiore in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, le basi dello sviluppo web con HTML e CSS, architettura dei computer e reti informatiche."
-               data-en="I'm a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Secondary School Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. My programme covers Python and Java programming, web development with HTML and CSS, computer architecture, and networking.">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma di Istruzione Secondaria Superiore in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, le basi dello sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
-            <p data-it="Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare un nuovo linguaggio e nel costruire cose che funzionano davvero, non solo in teoria."
-               data-en="Outside school, tennis is what truly taught me to follow through. A match isn't won with one perfect shot, but by showing up for the next rally, even after a mistake. I bring the same mindset to debugging, learning new languages, and building things that actually work — not just in theory.">Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare un nuovo linguaggio e nel costruire cose che funzionano davvero, non solo in teoria.</p>
+               data-it="Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, sviluppo web con HTML e CSS, architettura dei computer e reti informatiche."
+               data-en="I'm a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. My programme covers Python and Java, web development with HTML and CSS, computer architecture, and networking.">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
 
-            <div class="stat-row">
+            <p data-it="Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare nuovi linguaggi e nel costruire cose che funzionano davvero — non solo in teoria."
+               data-en="Outside school, tennis is what truly taught me to follow through. A match isn't won with one perfect shot, but by showing up for the next rally, even after a mistake. I bring the same mindset to debugging, learning new languages, and building things that actually work — not just in theory.">Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare nuovi linguaggi e nel costruire cose che funzionano davvero — non solo in teoria.</p>
+
+            <div class="stat-row reveal-stagger reveal">
               <div class="stat-card">
                 <div class="stat-number">4</div>
-                <div class="stat-label" data-it="Anni di studio in IT" data-en="Years studying IT">Anni di studio in IT</div>
+                <div class="stat-label" data-it="Anni di studio IT" data-en="Years studying IT">Anni di studio IT</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">8</div>
-                <div class="stat-label" data-it="Certificazioni conseguite" data-en="Certifications earned">Certificazioni conseguite</div>
+                <div class="stat-label" data-it="Certificazioni" data-en="Certifications">Certificazioni</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">B2</div>
-                <div class="stat-label" data-it="Livello d'inglese" data-en="English level">Livello d'inglese</div>
+                <div class="stat-label" data-it="Livello inglese" data-en="English level">Livello inglese</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">6/6</div>
-                <div class="stat-label" data-it="Punteggio massimo comp. digitali" data-en="Max score digital competences">Punteggio massimo comp. digitali</div>
+                <div class="stat-label" data-it="DigComp max" data-en="DigComp max">DigComp max</div>
               </div>
             </div>
           </div>
@@ -215,84 +240,86 @@
       </div>
     </section>
 
-    <!-- ============================= EXPERIENCE ============================= -->
-    <section class="section section--soft" id="experience">
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ══════════════════════════ EXPERIENCE ═════════════════════════════ -->
+    <section class="section" id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow" data-it="Ranking" data-en="Ranking">Ranking</p>
-          <h2 class="section-title" data-it="Carriera" data-en="Career">Carriera</h2>
+          <p class="eyebrow" data-it="Il ranking" data-en="The ranking">Il ranking</p>
+          <h2 class="section-title" id="ccCourtTitle" data-it="Centre Court" data-en="Centre Court">Centre Court</h2>
           <p class="section-sub"
-             data-it="La mia carriera è appena iniziata: ecco la prima voce in classifica, con altri slot pronti per i prossimi turni. Tocca una voce per far correre la pallina sul Centre Court."
-             data-en="My career has just started — here's the first entry on the ranking, with more slots ready for the rounds ahead. Tap an entry to move the ball across the Centre Court.">La mia carriera è appena iniziata: ecco la prima voce in classifica, con altri slot pronti per i prossimi turni. Tocca una voce per far correre la pallina sul Centre Court.</p>
+             data-it="Le tappe del mio percorso, tracciate come punti su un campo. Seleziona una voce per spostare la pallina."
+             data-en="Milestones on my path, mapped as points on a court. Select one to move the ball.">Le tappe del mio percorso, tracciate come punti su un campo. Seleziona una voce per spostare la pallina.</p>
         </div>
 
-        <div class="centre-court reveal" id="centreCourt">
+        <div class="cc-wrap reveal">
+          <!-- Vertical court visual -->
           <div class="cc-field">
-            <svg class="cc-lines" viewBox="0 0 460 700" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-              <rect x="20" y="20" width="420" height="660" class="cc-line-outer"/>
-              <rect x="70" y="20" width="320" height="660" class="cc-line"/>
-              <line x1="70" y1="190" x2="390" y2="190" class="cc-line"/>
-              <line x1="70" y1="510" x2="390" y2="510" class="cc-line"/>
-              <line x1="230" y1="190" x2="230" y2="510" class="cc-line"/>
-              <line x1="20" y1="350" x2="440" y2="350" class="cc-net"/>
-              <line x1="230" y1="20" x2="230" y2="34" class="cc-line-outer"/>
-              <line x1="230" y1="646" x2="230" y2="660" class="cc-line-outer"/>
+            <svg class="cc-field-svg" viewBox="0 0 200 356" preserveAspectRatio="xMidYMid meet">
+              <rect x="10" y="10" width="180" height="336"/>
+              <rect x="28" y="10" width="144" height="336"/>
+              <line x1="10" y1="178" x2="190" y2="178"/>
+              <line x1="100" y1="80" x2="100" y2="178"/>
+              <line x1="100" y1="178" x2="100" y2="276"/>
+              <line x1="28" y1="80" x2="172" y2="80"/>
+              <line x1="28" y1="276" x2="172" y2="276"/>
+              <line x1="100" y1="10" x2="100" y2="22"/>
+              <line x1="100" y1="334" x2="100" y2="346"/>
             </svg>
-            <div class="cc-ball" id="ccBall" aria-hidden="true"></div>
-            <div class="cc-call" id="ccCall" aria-live="polite">Game · Set · Match</div>
-            <span class="cc-field-tag cc-field-tag--left" data-it="Punto di partenza" data-en="Starting point">Punto di partenza</span>
-            <span class="cc-field-tag cc-field-tag--right" data-it="Tocca un'esperienza" data-en="Tap an entry">Tocca un'esperienza</span>
+            <div class="cc-ball" id="ccBall" style="left:50%;top:50%;" aria-hidden="true"></div>
+            <div class="cc-call" id="ccCall">Game · Set · Match</div>
           </div>
 
-          <div class="cc-entries">
-            <button class="cc-entry is-current is-active" type="button" data-pos-x="31" data-pos-y="38">
-              <span class="cc-entry-period" data-it="03 – 16 giugno 2026" data-en="03 – 16 June 2026">03 – 16 giugno 2026</span>
-              <h3>FSL — Fi.Co. SRL</h3>
-              <p class="org" data-it="Formazione Scuola-Lavoro (FSL) · Andria, Italia" data-en="School-Work Programme (FSL) · Andria, Italy">Formazione Scuola-Lavoro (FSL) · Andria, Italia</p>
-              <ul>
-                <li data-it="Sviluppo e realizzazione del sito web aziendale, dalla struttura alla messa online" data-en="Full development of the company website, from structure to deployment">Sviluppo e realizzazione del sito web aziendale, dalla struttura alla messa online</li>
-              </ul>
-              <div class="chip-row"><span class="chip">React</span><span class="chip">Tailwind CSS</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Vercel</span></div>
+          <!-- 4 Entry cards stacked in a column -->
+          <div class="cc-entries" id="ccEntries">
+            <button class="cc-entry" type="button" data-pos-x="30" data-pos-y="28">
+              <div class="cc-entry-period">2022 – <span data-it="Oggi" data-en="Now">Oggi</span></div>
+              <h3 data-it="Studente IT e Telecomunicazioni" data-en="IT &amp; Telecom Student">Studente IT e Telecomunicazioni</h3>
+              <p class="org">ITT Sen. O. Jannuzzi, Andria</p>
             </button>
-
-            <button class="cc-entry is-upcoming" type="button" data-pos-x="69" data-pos-y="38">
-              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
-              <h3 data-it="Prossima esperienza" data-en="Next experience">Prossima esperienza</h3>
-              <p class="org" data-it="Un nuovo punto sul campo, presto qui" data-en="A new point on the court, coming soon">Un nuovo punto sul campo, presto qui</p>
+            <button class="cc-entry" type="button" data-pos-x="70" data-pos-y="38">
+              <div class="cc-entry-period">2024</div>
+              <h3 data-it="Certificazione Cisco IT Essentials" data-en="Cisco IT Essentials Cert.">Certificazione Cisco IT Essentials</h3>
+              <p class="org">Cisco Networking Academy</p>
             </button>
-
-            <button class="cc-entry is-upcoming" type="button" data-pos-x="31" data-pos-y="62">
-              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
-              <h3 data-it="Prossimo turno" data-en="Next round">Prossimo turno</h3>
-              <p class="org" data-it="Un nuovo capitolo è in arrivo" data-en="A new chapter is on its way">Un nuovo capitolo è in arrivo</p>
+            <button class="cc-entry" type="button" data-pos-x="30" data-pos-y="62">
+              <div class="cc-entry-period">2025</div>
+              <h3 data-it="Certificazione CCNA + Cybersecurity" data-en="CCNA + Cybersecurity Cert.">Certificazione CCNA + Cybersecurity</h3>
+              <p class="org">Cisco Networking Academy</p>
             </button>
-
-            <button class="cc-entry is-upcoming is-match-point" type="button" data-pos-x="69" data-pos-y="62">
-              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
-              <h3>Match point</h3>
-              <p class="org" data-it="Un'altra esperienza, in arrivo" data-en="Another experience, on the way">Un'altra esperienza, in arrivo</p>
+            <button class="cc-entry is-match-point" type="button" data-pos-x="70" data-pos-y="72">
+              <div class="cc-entry-period">2026</div>
+              <h3 data-it="Diploma — Match Point" data-en="Diploma — Match Point">Diploma — Match Point</h3>
+              <p class="org" data-it="Traguardo finale in corso" data-en="Final milestone in progress">Traguardo finale in corso</p>
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================= EDUCATION ============================= -->
-    <section class="section section--surface" id="education">
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ══════════════════════════ EDUCATION ══════════════════════════════ -->
+    <section class="section section--soft" id="education">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow" data-it="Il tabellone" data-en="The draw">Il tabellone</p>
-          <h2 class="section-title" data-it="Formazione" data-en="Education">Formazione</h2>
+          <h2 class="section-title" data-it="Percorso accademico" data-en="Academic path">Percorso accademico</h2>
           <p class="section-sub"
-             data-it="Il mio percorso accademico finora — e il prossimo turno ancora da sorteggiare."
-             data-en="My academic path so far — and the next round yet to be drawn.">Il mio percorso accademico finora — e il prossimo turno ancora da sorteggiare.</p>
+             data-it="Il torneo del mio apprendimento — turni disputati e tornei futuri."
+             data-en="The tournament of my learning — rounds played and future events.">Il torneo del mio apprendimento — turni disputati e tornei futuri.</p>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item is-current reveal">
+        <div class="draw-timeline reveal">
+          <div class="timeline-item">
             <span class="timeline-node" aria-hidden="true"></span>
             <div class="timeline-card">
-              <div class="timeline-period" data-it="18 set 2022 – Oggi · <strong>In corso</strong>" data-en="18 Sep 2022 – Now · <strong>In progress</strong>">18 set 2022 – Oggi · <strong>In corso</strong></div>
+              <div class="timeline-period">2022 – 2026</div>
               <h3 data-it="Diploma di Istruzione Secondaria Superiore" data-en="Secondary School Diploma">Diploma di Istruzione Secondaria Superiore</h3>
               <p class="org" data-it="Informatica e Telecomunicazioni — ITT Sen. O. Jannuzzi, Andria, Italia" data-en="IT &amp; Telecommunications — ITT Sen. O. Jannuzzi, Andria, Italy">Informatica e Telecomunicazioni — ITT Sen. O. Jannuzzi, Andria, Italia</p>
               <ul>
@@ -307,7 +334,7 @@
             </div>
           </div>
 
-          <div class="timeline-item reveal">
+          <div class="timeline-item">
             <span class="timeline-node" aria-hidden="true"></span>
             <div class="timeline-card">
               <div class="timeline-period" data-it="2026 → Futuro" data-en="2026 → Future">2026 → Futuro</div>
@@ -319,15 +346,19 @@
       </div>
     </section>
 
-    <!-- ============================= SKILLS ============================= -->
-    <section class="section section--soft" id="skills">
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ═══════════════════════════ SKILLS ════════════════════════════════ -->
+    <section class="section section--surface" id="skills">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow" data-it="Il segnapunti" data-en="The scoreboard">Il segnapunti</p>
           <h2 class="section-title" data-it="Stats" data-en="Stats">Stats</h2>
           <p class="section-sub"
-             data-it="Livello di competenza autovalutato sui linguaggi e gli strumenti che uso attualmente, più un'autovalutazione delle competenze digitali basata sul framework europeo DigComp 2.1."
-             data-en="Self-assessed proficiency in the languages and tools I currently use, plus a digital competence self-assessment based on the European DigComp 2.1 framework.">Livello di competenza autovalutato sui linguaggi e gli strumenti che uso attualmente, più un'autovalutazione delle competenze digitali basata sul framework europeo DigComp 2.1.</p>
+             data-it="Competenze autovalutate sui linguaggi e strumenti che uso, più una stima basata su DigComp 2.1."
+             data-en="Self-assessed proficiency in languages and tools I use, plus a DigComp 2.1 digital competence estimate.">Competenze autovalutate sui linguaggi e strumenti che uso, più una stima basata su DigComp 2.1.</p>
         </div>
 
         <div class="skills-board reveal">
@@ -339,39 +370,38 @@
             <div class="skills-group">
               <h3 data-it="Linguaggi di programmazione" data-en="Programming languages">Linguaggi di programmazione</h3>
               <div class="skill-row" data-score="85">
-                <div class="skill-row-top"><span>Python</span><span class="skill-score">85%</span></div>
+                <div class="skill-row-top"><span>Python</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="78">
-                <div class="skill-row-top"><span>Java</span><span class="skill-score">78%</span></div>
+                <div class="skill-row-top"><span>Java</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="65">
-                <div class="skill-row-top"><span>C / C++</span><span class="skill-score">65%</span></div>
+                <div class="skill-row-top"><span>C / C++</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="60">
-                <div class="skill-row-top"><span>C#</span><span class="skill-score">60%</span></div>
+                <div class="skill-row-top"><span>C#</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
             </div>
-
             <div class="skills-group">
               <h3 data-it="Web e strumenti" data-en="Web &amp; tools">Web e strumenti</h3>
               <div class="skill-row" data-score="88">
-                <div class="skill-row-top"><span>HTML5</span><span class="skill-score">88%</span></div>
+                <div class="skill-row-top"><span>HTML5</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="82">
-                <div class="skill-row-top"><span>CSS3</span><span class="skill-score">82%</span></div>
+                <div class="skill-row-top"><span>CSS3</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="75">
-                <div class="skill-row-top"><span data-it="Pacchetto Microsoft Office" data-en="Microsoft Office Suite">Pacchetto Microsoft Office</span><span class="skill-score">75%</span></div>
+                <div class="skill-row-top"><span data-it="Microsoft Office" data-en="Microsoft Office">Microsoft Office</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="90">
-                <div class="skill-row-top"><span data-it="Comunicazione e lavoro di squadra" data-en="Communication &amp; teamwork">Comunicazione e lavoro di squadra</span><span class="skill-score">90%</span></div>
+                <div class="skill-row-top"><span data-it="Comunicazione e team" data-en="Communication &amp; team">Comunicazione e team</span><span class="skill-score"></span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
             </div>
@@ -379,47 +409,26 @@
         </div>
 
         <div style="margin-top:2.5rem;" class="reveal">
-          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;"
-              data-it="Quadro delle Competenze Digitali 2.1 — autovalutazione"
-              data-en="Digital Competence Framework 2.1 — self-assessment">Quadro delle Competenze Digitali 2.1 — autovalutazione</h3>
+          <h3 style="font-family:var(--font-mono);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1rem;"
+              data-it="DigComp 2.1 — autovalutazione"
+              data-en="DigComp 2.1 — self-assessment">DigComp 2.1 — autovalutazione</h3>
           <div class="dc-grid">
-            <div class="dc-card">
-              <div class="dc-level">4<small> / 6</small></div>
-              <div class="dc-name" data-it="Alfabetizzazione informatica e sui dati" data-en="Information &amp; data literacy">Alfabetizzazione informatica e sui dati</div>
-              <span class="dc-tag" data-it="Intermedio" data-en="Intermediate">Intermedio</span>
-            </div>
-            <div class="dc-card">
-              <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name" data-it="Comunicazione e collaborazione" data-en="Communication &amp; collaboration">Comunicazione e collaborazione</div>
-              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
-            </div>
-            <div class="dc-card">
-              <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name" data-it="Creazione di contenuti digitali" data-en="Digital content creation">Creazione di contenuti digitali</div>
-              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
-            </div>
-            <div class="dc-card">
-              <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name" data-it="Sicurezza" data-en="Safety">Sicurezza</div>
-              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
-            </div>
-            <div class="dc-card">
-              <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name" data-it="Risoluzione dei problemi" data-en="Problem solving">Risoluzione dei problemi</div>
-              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
-            </div>
+            <div class="dc-card"><div class="dc-level">4<small> / 6</small></div><div class="dc-name" data-it="Alfabetizzazione informatica" data-en="Information literacy">Alfabetizzazione informatica</div><span class="dc-tag" data-it="Intermedio" data-en="Intermediate">Intermedio</span></div>
+            <div class="dc-card"><div class="dc-level">6<small> / 6</small></div><div class="dc-name" data-it="Comunicazione e collaborazione" data-en="Communication &amp; collaboration">Comunicazione e collaborazione</div><span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span></div>
+            <div class="dc-card"><div class="dc-level">6<small> / 6</small></div><div class="dc-name" data-it="Creazione di contenuti" data-en="Content creation">Creazione di contenuti</div><span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span></div>
+            <div class="dc-card"><div class="dc-level">6<small> / 6</small></div><div class="dc-name" data-it="Sicurezza" data-en="Safety">Sicurezza</div><span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span></div>
+            <div class="dc-card"><div class="dc-level">6<small> / 6</small></div><div class="dc-name" data-it="Risoluzione dei problemi" data-en="Problem solving">Risoluzione dei problemi</div><span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span></div>
           </div>
         </div>
 
         <div style="margin-top:2.5rem;" class="reveal">
-          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;"
-              data-it="Lingue" data-en="Languages">Lingue</h3>
+          <h3 style="font-family:var(--font-mono);font-size:var(--fs-xs);letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:1rem;" data-it="Lingue" data-en="Languages">Lingue</h3>
           <div class="lang-grid">
             <div class="lang-card">
               <div class="lang-card-top"><h4 data-it="Italiano" data-en="Italian">Italiano</h4><span class="lang-level-badge" data-it="Madrelingua" data-en="Native">Madrelingua</span></div>
             </div>
             <div class="lang-card">
-              <div class="lang-card-top"><h4 data-it="Inglese" data-en="English">Inglese</h4><span class="lang-level-badge" data-it="B2 complessivo" data-en="Overall B2">B2 complessivo</span></div>
+              <div class="lang-card-top"><h4 data-it="Inglese" data-en="English">Inglese</h4><span class="lang-level-badge">B2</span></div>
               <div class="lang-skills">
                 <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Ascolto" data-en="Listening">Ascolto</span></div>
                 <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Lettura" data-en="Reading">Lettura</span></div>
@@ -433,213 +442,171 @@
       </div>
     </section>
 
-    <!-- ============================= CERTIFICATIONS ============================= -->
-    <section class="section section--surface" id="certifications">
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ══════════════════════════ CERTIFICATIONS ════════════════════════ -->
+    <section class="section section--soft" id="certifications">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow" data-it="La bacheca dei trofei" data-en="Trophy cabinet">La bacheca dei trofei</p>
           <h2 class="section-title" data-it="Certificazioni" data-en="Certifications">Certificazioni</h2>
           <p class="section-sub"
-             data-it="Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e intelligenza artificiale."
-             data-en="Eight certifications earned so far, from English language to networking, Python, SQL and artificial intelligence.">Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e intelligenza artificiale.</p>
+             data-it="Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e AI."
+             data-en="Eight certifications earned so far: English language, networking, Python, SQL, and artificial intelligence.">Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e AI.</p>
         </div>
-
         <div class="cert-grid reveal-stagger reveal">
           <div class="cert-card">
-            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l4 4v14H4V3z" opacity="0"/><path d="M3 5h18M3 5l2-2h14l2 2M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
+            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h18M3 5l2-2h14l2 2M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
             <h3 data-it="Certificazione Inglese B2" data-en="English B2 Certificate">Certificazione Inglese B2</h3>
-            <p class="cert-issuer" data-it="Certificazione linguistica — Quadro Comune Europeo" data-en="Language certification — Common European Framework">Certificazione linguistica — Quadro Comune Europeo</p>
-            <a class="cert-download" href="assets/certificates/b2-inglese.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <p class="cert-issuer" data-it="Quadro Comune Europeo" data-en="Common European Framework">Quadro Comune Europeo</p>
+            <a class="cert-download" href="assets/certificates/b2-inglese.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
           <div class="cert-card">
             <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h.01M10 10h4M10 14h6"/></svg></span>
             <h3>Cisco IT Essentials</h3>
             <p class="cert-issuer">Cisco Networking Academy</p>
-            <a class="cert-download" href="assets/certificates/cisco-it-essentials.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <a class="cert-download" href="assets/certificates/cisco-it-essentials.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
           <div class="cert-card">
             <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M8 6h8M6 8v8M18 8v8M8 18h8"/></svg></span>
             <h3>Cisco CCNA</h3>
             <p class="cert-issuer">Cisco Networking Academy</p>
-            <a class="cert-download" href="assets/certificates/cisco-ccna.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <a class="cert-download" href="assets/certificates/cisco-ccna.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
           <div class="cert-card">
-            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 10a3 3 0 1 1 4 2.83V14"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></span>
-            <h3>Elements of AI</h3>
-            <p class="cert-issuer">University of Helsinki &amp; Reaktor</p>
-            <a class="cert-download" href="assets/certificates/elements-of-ai.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span>
+            <h3>Cisco Cybersecurity</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <a class="cert-download" href="assets/certificates/cisco-cybersecurity.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
-          <div class="cert-card">
-            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
-            <h3>GitHub Skills</h3>
-            <p class="cert-issuer">GitHub</p>
-            <a class="cert-download" href="assets/certificates/github-skills.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
-          </div>
-
           <div class="cert-card">
             <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-            <h3>Kaggle — Python</h3>
-            <p class="cert-issuer">Kaggle</p>
-            <a class="cert-download" href="assets/certificates/kaggle-python.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <h3>Python Essentials 1</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <a class="cert-download" href="assets/certificates/python1.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
           <div class="cert-card">
-            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
-            <h3>Kaggle — SQL</h3>
-            <p class="cert-issuer">Kaggle</p>
-            <a class="cert-download" href="assets/certificates/kaggle-sql.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
+            <h3>Python Essentials 2</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <a class="cert-download" href="assets/certificates/python2.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
-
           <div class="cert-card">
-            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
-            <h3>IBM SkillsBuild</h3>
-            <p class="cert-issuer">IBM</p>
-            <a class="cert-download" href="assets/certificates/ibm-skillsbuild.pdf" download>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
-            </a>
+            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg></span>
+            <h3>SQL</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <a class="cert-download" href="assets/certificates/sql.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
+          </div>
+          <div class="cert-card">
+            <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+            <h3 data-it="AI e Machine Learning" data-en="AI &amp; Machine Learning">AI e Machine Learning</h3>
+            <p class="cert-issuer">Cisco Networking Academy</p>
+            <a class="cert-download" href="assets/certificates/ai-ml.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg><span data-it="Scarica" data-en="Download">Scarica</span></a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================= PROJECTS / MATCHES ============================= -->
-    <section class="section section--soft" id="projects">
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ════════════════════════════ PROJECTS ════════════════════════════ -->
+    <section class="section section--surface" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow" data-it="In gioco" data-en="In play">In gioco</p>
-          <h2 class="section-title" data-it="Match" data-en="Matches">Match</h2>
+          <p class="eyebrow" data-it="I match" data-en="The matches">I match</p>
+          <h2 class="section-title" data-it="Progetti" data-en="Projects">Progetti</h2>
           <p class="section-sub"
-             data-it="Ogni progetto è un match a sé: un contesto da leggere, una decisione tecnica, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto."
-             data-en="Every project is its own match: a context to read, a technical decision, an execution and a result. The tech stack is just the equipment — it matters less than how the point was played.">Ogni progetto è un match a sé: un contesto da leggere, una decisione tecnica, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto.</p>
+             data-it="Ogni progetto come un match: contesto, decisione tecnica, esecuzione, risultato."
+             data-en="Each project like a match: context, technical decision, execution, result.">Ogni progetto come un match: contesto, decisione tecnica, esecuzione, risultato.</p>
         </div>
 
         <div class="projects-grid reveal-stagger reveal">
-          <div class="project-card is-live">
-            <span class="project-ribbon" data-it="Live" data-en="Live">Live</span>
+          <!-- Match 01 -->
+          <div class="project-card">
+            <span class="project-ribbon" data-it="Web" data-en="Web">Web</span>
             <span class="project-index">Match 01</span>
-            <h3 data-it="Sito Web Fi.Co. SRL" data-en="Fi.Co. SRL Website">Sito Web Fi.Co. SRL</h3>
-
+            <h3 data-it="Simulatore Rete Bancaria" data-en="Banking Network Simulator">Simulatore Rete Bancaria</h3>
             <dl class="case-study">
               <div class="case-row">
-                <dt data-it="Il contesto" data-en="Match context">Il contesto</dt>
-                <dd data-it="Durante il tirocinio scuola-lavoro l'azienda non aveva ancora un sito: serviva una presenza online costruita da zero, in tempi stretti."
-                    data-en="The company had no website yet — during my school-work placement I had to build an online presence from zero, on a tight schedule.">Durante il tirocinio scuola-lavoro l'azienda non aveva ancora un sito: serviva una presenza online costruita da zero, in tempi stretti.</dd>
+                <dt data-it="Contesto" data-en="Context">Contesto</dt>
+                <dd data-it="Progetto scolastico per simulare transazioni e routing tra filiali bancarie." data-en="School project to simulate transactions and routing between bank branches.">Progetto scolastico per simulare transazioni e routing tra filiali bancarie.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
-                <dd data-it="TypeScript per ridurre gli errori a runtime su una consegna a cliente singola, senza margine per un secondo giro di QA. Tailwind per restare veloce sul layout senza scrivere CSS da zero sotto scadenza."
-                    data-en="TypeScript to cut down runtime errors on a single client delivery with no room for a second QA pass. Tailwind to move fast on layout without writing CSS from scratch against a deadline.">TypeScript per ridurre gli errori a runtime su una consegna a cliente singola, senza margine per un secondo giro di QA. Tailwind per restare veloce sul layout senza scrivere CSS da zero sotto scadenza.</dd>
-              </div>
-              <div class="case-row">
-                <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>
-                <dd data-it="Struttura, componenti e layout responsive progettati e sviluppati in autonomia, dal primo wireframe al deploy."
-                    data-en="Structure, components and a responsive layout designed and built independently, from first wireframe to deploy.">Struttura, componenti e layout responsive progettati e sviluppati in autonomia, dal primo wireframe al deploy.</dd>
+                <dt data-it="Decisione" data-en="Decision">Decisione</dt>
+                <dd data-it="Java per la logica di rete; architettura modulare per separare i layer." data-en="Java for network logic; modular architecture to separate layers.">Java per la logica di rete; architettura modulare per separare i layer.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Risultato" data-en="Result">Risultato</dt>
-                <dd data-it="Sito pubblicato e online su Vercel: la mia prima consegna reale per un cliente esterno."
-                    data-en="Shipped and live on Vercel — my first real delivery for an outside client.">Sito pubblicato e online su Vercel: la mia prima consegna reale per un cliente esterno.</dd>
+                <dd data-it="Simulazione funzionante con gestione degli errori e log delle transazioni." data-en="Working simulation with error handling and transaction logging.">Simulazione funzionante con gestione degli errori e log delle transazioni.</dd>
               </div>
             </dl>
-
-            <div class="project-tags"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span><span class="chip">Vercel</span></div>
-            <a class="project-link" href="https://sito-fico.vercel.app/" target="_blank" rel="noopener noreferrer" data-it="Vedi il sito live" data-en="View the live site">Vedi il sito live</a>
+            <div class="project-tags"><span class="chip">Java</span><span class="chip">OOP</span><span class="chip">Networking</span></div>
+            <div class="project-links">
+              <a class="project-link" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+            </div>
           </div>
 
-          <div class="project-card is-live">
-            <span class="project-ribbon" data-it="Live" data-en="Live">Live</span>
+          <!-- Match 02 -->
+          <div class="project-card">
+            <span class="project-ribbon" data-it="Portfolio" data-en="Portfolio">Portfolio</span>
             <span class="project-index">Match 02</span>
-            <h3 data-it="Portfolio Personale" data-en="Personal Portfolio">Portfolio Personale</h3>
-
+            <h3 data-it="Questo Portfolio" data-en="This Portfolio">Questo Portfolio</h3>
             <dl class="case-study">
               <div class="case-row">
-                <dt data-it="Il contesto" data-en="Match context">Il contesto</dt>
-                <dd data-it="Un template da solo non bastava a raccontare chi sono: serviva un sito che unisse la mia identità al modo in cui lavoro."
-                    data-en="A template alone wasn't enough to tell people who I am — I needed a site that matched my identity to how I actually work.">Un template da solo non bastava a raccontare chi sono: serviva un sito che unisse la mia identità al modo in cui lavoro.</dd>
+                <dt data-it="Contesto" data-en="Context">Contesto</dt>
+                <dd data-it="Serviva un portfolio personale che riflettesse identità, competenze e mentalità." data-en="A personal portfolio needed to reflect identity, skills, and mindset.">Serviva un portfolio personale che riflettesse identità, competenze e mentalità.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
-                <dd data-it="Niente framework: un sito statico a contenuto fisso non ha bisogno di un bundle React per restare manutenibile. HTML, CSS e JS vanilla caricano più leggeri e si modificano a mano senza build step."
-                    data-en="No framework: a static, content-fixed site doesn't need a React bundle to stay maintainable. Vanilla HTML, CSS and JS load lighter and can be hand-edited with no build step.">Niente framework: un sito statico a contenuto fisso non ha bisogno di un bundle React per restare manutenibile. HTML, CSS e JS vanilla caricano più leggeri e si modificano a mano senza build step.</dd>
-              </div>
-              <div class="case-row">
-                <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>
-                <dd data-it="HTML, CSS e JS scritti a mano: dark mode, animazioni, contenuto bilingue IT/EN, tutto senza dipendenze."
-                    data-en="Hand-written HTML, CSS and JS: dark mode, animation, bilingual IT/EN content, all built without dependencies.">HTML, CSS e JS scritti a mano: dark mode, animazioni, contenuto bilingue IT/EN, tutto senza dipendenze.</dd>
+                <dt data-it="Decisione" data-en="Decision">Decisione</dt>
+                <dd data-it="Nessun framework: HTML, CSS e JS vanilla per mantenere il controllo totale senza build step." data-en="No framework: HTML, CSS and vanilla JS for full control with no build step.">Nessun framework: HTML, CSS e JS vanilla per mantenere il controllo totale senza build step.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Risultato" data-en="Result">Risultato</dt>
-                <dd data-it="Il sito che stai guardando proprio ora, pubblicato su GitHub Pages e aggiornato a ogni nuova versione."
-                    data-en="The site you're looking at right now — published on GitHub Pages and updated with every new version.">Il sito che stai guardando proprio ora, pubblicato su GitHub Pages e aggiornato a ogni nuova versione.</dd>
+                <dd data-it="Il sito che stai guardando ora — bilingue, dark mode, zero dipendenze." data-en="The site you're reading now — bilingual, dark mode, zero dependencies.">Il sito che stai guardando ora — bilingue, dark mode, zero dipendenze.</dd>
               </div>
             </dl>
-
             <div class="project-tags"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JS Vanilla</span></div>
-            <a class="project-link" href="#hero" data-it="Guardalo ora" data-en="You're here">Guardalo ora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+            <div class="project-links">
+              <a class="project-link" href="#hero" data-it="Guardalo ora" data-en="You're here">Guardalo ora</a>
+              <a class="project-link" href="https://github.com/Nicoguglielmii/personal-portfolio" target="_blank" rel="noopener">GitHub <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.41 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.23 0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg></a>
+            </div>
           </div>
 
-          <div class="project-card is-code">
+          <!-- Match 03 -->
+          <div class="project-card">
             <span class="project-ribbon" data-it="Codice" data-en="Code">Codice</span>
             <span class="project-index">Match 03</span>
             <h3 data-it="Password Manager con GUI" data-en="GUI Password Manager">Password Manager con GUI</h3>
-
             <dl class="case-study">
               <div class="case-row">
-                <dt data-it="Il contesto" data-en="Match context">Il contesto</dt>
-                <dd data-it="Troppe password, troppi servizi diversi: serviva un modo per gestirle senza affidarsi a terzi."
-                    data-en="Too many passwords, too many services — I needed a way to manage them without relying on third parties.">Troppe password, troppi servizi diversi: serviva un modo per gestirle senza affidarsi a terzi.</dd>
+                <dt data-it="Contesto" data-en="Context">Contesto</dt>
+                <dd data-it="Troppe password, troppi servizi: serviva una soluzione locale senza affidarsi a terzi." data-en="Too many passwords, too many services — I needed a fully local solution.">Troppe password, troppi servizi: serviva una soluzione locale senza affidarsi a terzi.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
-                <dd data-it="Python e Tkinter per restare locale: niente account, niente server, niente dati che lasciano il computer. La sicurezza viene dal non avere una superficie d'attacco di rete, non da un servizio cloud di cui fidarsi."
-                    data-en="Python and Tkinter to stay fully local: no account, no server, nothing leaving the machine. Security comes from having no network attack surface at all, not from trusting a cloud service.">Python e Tkinter per restare locale: niente account, niente server, niente dati che lasciano il computer. La sicurezza viene dal non avere una superficie d'attacco di rete, non da un servizio cloud di cui fidarsi.</dd>
-              </div>
-              <div class="case-row">
-                <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>
-                <dd data-it="Interfaccia grafica in Tkinter per generare, salvare e recuperare le credenziali in pochi click."
-                    data-en="A Tkinter GUI to generate, store and retrieve credentials in a few clicks.">Interfaccia grafica in Tkinter per generare, salvare e recuperare le credenziali in pochi click.</dd>
+                <dt data-it="Decisione" data-en="Decision">Decisione</dt>
+                <dd data-it="Python + Tkinter: niente account, niente server, nessun dato che lascia il computer." data-en="Python + Tkinter: no account, no server, nothing leaving the machine.">Python + Tkinter: niente account, niente server, nessun dato che lascia il computer.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Risultato" data-en="Result">Risultato</dt>
-                <dd data-it="Strumento funzionante per uso personale; il prossimo passo è ripulire il codice e renderlo pubblico."
-                    data-en="A working tool for personal use; next up is cleaning the code and releasing it publicly.">Strumento funzionante per uso personale; il prossimo passo è ripulire il codice e renderlo pubblico.</dd>
+                <dd data-it="Strumento funzionante per uso personale; il codice verrà pubblicato dopo una revisione." data-en="Working personal tool; code will be released publicly after a cleanup pass.">Strumento funzionante per uso personale; il codice verrà pubblicato dopo una revisione.</dd>
               </div>
             </dl>
-
-            <div class="project-tags"><span class="chip">Python</span><span class="chip">GUI (Tkinter)</span></div>
+            <div class="project-tags"><span class="chip">Python</span><span class="chip">Tkinter</span><span class="chip">GUI</span></div>
             <span class="project-link project-link--soon" data-it="Link in arrivo" data-en="Link coming soon">Link in arrivo</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================= TENNIS PHILOSOPHY ============================= -->
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ════════════════════════════ PHILOSOPHY ═══════════════════════════ -->
     <section class="section philosophy" id="philosophy">
       <div class="container">
         <div class="section-head reveal">
@@ -656,33 +623,31 @@
           <div class="philosophy-text reveal">
             <p data-it="Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla."
                data-en="Tennis is a sport of repetition. You hit the same backhand thousands of times before it becomes reliable under pressure. Writing software isn't so different: the tenth version of a function is usually better than the first, and the only way to get there is to keep showing up and refining it.">Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla.</p>
-            <p data-it="Entrambi puniscono l'impazienza. Un'approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità."
-               data-en="Both punish impatience. A rushed approach ends in the net; a hastily written line of code turns into a 2am bug. What tennis taught me first, and every project since has confirmed, is that consistent, unglamorous practice beats talent that doesn't show up regularly.">Entrambi puniscono l'impazienza. Un'approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
+            <p data-it="Entrambi puniscono l'impazienza. Un approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità."
+               data-en="Both punish impatience. A rushed approach ends in the net; a hastily written line of code turns into a 2am bug. What tennis taught me first, and every project since has confirmed, is that consistent, unglamorous practice beats talent that doesn't show up regularly.">Entrambi puniscono l'impazienza. Un approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
             <p data-it="È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento."
                data-en="That's the standard I hold my work to: warm up properly, focus on fundamentals, and treat every setback — a lost set or a failing test — as information, not failure.">È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento.</p>
           </div>
 
-          <div class="philosophy-quotes reveal">
+          <div class="philosophy-quotes reveal" id="philosophyQuotes">
             <div class="quote-card">
-              <blockquote>"The work never stops."</blockquote>
-              <cite>— Jannik Sinner</cite>
+              <blockquote id="philoQuote1">"The work never stops."</blockquote>
+              <cite id="philoCite1">— Jannik Sinner</cite>
             </div>
             <div class="quote-card">
-              <blockquote>"You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."</blockquote>
-              <cite>— Roger Federer</cite>
-            </div>
-            <div class="quote-card">
-              <p class="paraphrase"
-                 data-it="Roger Federer insegna a credere nel percorso e negli obiettivi futuri; Jannik Sinner dimostra che quel percorso si costruisce ogni giorno, attraverso lavoro, pazienza e attenzione ai dettagli."
-                 data-en="Roger Federer teaches believing in the journey and future goals; Jannik Sinner shows that path is built day by day, through work, patience and attention to detail.">Roger Federer insegna a credere nel percorso e negli obiettivi futuri; Jannik Sinner dimostra che quel percorso si costruisce ogni giorno, attraverso lavoro, pazienza e attenzione ai dettagli.</p>
-              <cite data-it="— Ispirato alla mentalità di Roger Federer e Jannik Sinner" data-en="— Inspired by the mindset of Roger Federer and Jannik Sinner">— Ispirato alla mentalità di Roger Federer e Jannik Sinner</cite>
+              <blockquote id="philoQuote2">"You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."</blockquote>
+              <cite id="philoCite2">— Roger Federer</cite>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============================= CONTACT ============================= -->
+    <div class="court-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
+    </div>
+
+    <!-- ════════════════════════════ CONTACT ══════════════════════════════ -->
     <section class="section section--surface" id="contact">
       <div class="container">
         <div class="section-head reveal">
@@ -693,11 +658,11 @@
              data-en="Open to internships, placements and collaborations. I usually reply within a couple of days.">Aperto a stage, tirocini e collaborazioni. Rispondo di solito entro un paio di giorni.</p>
         </div>
 
-        <div class="contact-grid contact-grid--solo">
-          <div class="contact-info reveal">
+        <div class="contact-grid contact-grid--solo reveal">
+          <div class="contact-info">
             <div class="contact-info-list">
               <div class="contact-info-item">
-                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></span>
+                <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></span>
                 <div>
                   <h4>Email</h4>
                   <a href="mailto:nicolaguglielmii09k@gmail.com">nicolaguglielmii09k@gmail.com</a>
@@ -713,35 +678,41 @@
             </div>
 
             <div class="contact-socials">
-              <a class="icon-btn" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener" aria-label="Profilo GitHub">
+              <a class="icon-btn" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener" aria-label="GitHub">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.41 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.23 0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
               </a>
             </div>
+
+            <a class="btn btn--ghost" style="margin-top:1.8rem;" href="assets/Nicola-Guglielmi-CV.pdf" download>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
+              <span data-it="Scarica il CV" data-en="Download CV">Scarica il CV</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ============================= FOOTER ============================= -->
+  <!-- ════════════════════════════ FOOTER ═══════════════════════════════ -->
   <footer class="site-footer">
     <div class="footer-photo" aria-hidden="true">
-      <img src="assets/images/roland-garros.jpg" alt="">
+      <img id="footerImg" src="assets/images/wimbledon.jpg" alt="" loading="lazy" decoding="async">
       <div class="footer-photo-fade"></div>
     </div>
     <div class="container">
       <div class="footer-quote reveal">
         <div class="court-divider" aria-hidden="true">
-          <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle cx="600" cy="14" r="3" fill="rgba(250,248,242,0.3)" stroke="none"/></svg>
+          <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle class="court-c" cx="600" cy="14" r="3.5"/></svg>
         </div>
-        <blockquote data-it="&ldquo;La vittoria appartiene ai più tenaci.&rdquo;" data-en="&ldquo;Victory belongs to the most tenacious.&rdquo;">"La vittoria appartiene ai più tenaci."</blockquote>
-        <cite data-it="Incisione sopra il Court Philippe-Chatrier, Roland Garros" data-en="Inscription above Court Philippe-Chatrier, Roland Garros">Incisione sopra il Court Philippe-Chatrier, Roland Garros</cite>
+        <!-- Quote changes with court theme — echoes the inscription visible in the photo -->
+        <blockquote id="footerQuoteText">"Se sai affrontare Trionfo e Disastro e trattare quei due impostori nello stesso modo."</blockquote>
+        <cite id="footerQuoteCite">Rudyard Kipling — Iscrizione sopra l'ingresso dei giocatori a Wimbledon</cite>
       </div>
 
       <div class="footer-bottom">
-        <span data-it="© <span id='year'>2026</span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla." data-en="© <span id='year'>2026</span> Nicola Guglielmi. Built with HTML, CSS &amp; vanilla JS.">© <span id="year">2026</span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla.</span>
+        <span data-it="© <span id='year'></span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla." data-en="© <span id='year'></span> Nicola Guglielmi. Built with HTML, CSS &amp; vanilla JS.">© <span id="year"></span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla.</span>
         <div class="footer-socials">
-          <a class="icon-btn" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener" aria-label="Profilo GitHub">
+          <a class="icon-btn" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener" aria-label="GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.41 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.23 0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
           </a>
         </div>
