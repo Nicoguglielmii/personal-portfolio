@@ -31,8 +31,8 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-mono: 'Space Mono', 'SFMono-Regular', Consolas, monospace;
 
-  --fs-h1: clamp(2.6rem, 6vw, 5rem);
-  --fs-h2: clamp(2rem, 4vw, 3rem);
+  --fs-h1: clamp(2.7rem, 6.4vw, 5.4rem);
+  --fs-h2: clamp(2.1rem, 4.4vw, 3.3rem);
   --fs-h3: clamp(1.3rem, 2.4vw, 1.7rem);
   --fs-lead: clamp(1.05rem, 1.6vw, 1.25rem);
   --fs-body: 1rem;
@@ -167,9 +167,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .section-title {
   font-family: var(--font-display);
   font-size: var(--fs-h2);
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
 }
 
 .section-sub {
@@ -431,6 +431,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   line-height: 0.98;
   letter-spacing: -0.02em;
 }
+.hero h1 .accent { color: var(--color-green); font-style: italic; }
 
 .hero-role {
   margin-top: 0.85rem;
@@ -1016,7 +1017,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .cert-download:hover { color: var(--color-ink); }
 
 /* -------------------------------- Projects -------------------------------- */
-.project-grid {
+.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 1.6rem;
@@ -1075,10 +1076,34 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .project-card:hover .project-index { color: var(--color-green); transform: translateX(2px); }
 [data-theme='dark'] .project-card:hover .project-index { color: var(--color-green-bright); }
 
-.project-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.6rem; transition: color var(--speed-fast) var(--ease); }
+.project-card h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 600; margin-bottom: 0.9rem; transition: color var(--speed-fast) var(--ease); }
 .project-card:hover h3 { color: var(--color-green); }
 [data-theme='dark'] .project-card:hover h3 { color: var(--color-green-bright); }
 .project-card p { color: var(--color-ink-soft); font-size: 0.92rem; line-height: 1.65; flex-grow: 1; }
+
+/* Case-study breakdown: Match Context / Strategy / Execution / Result */
+.case-study { flex-grow: 1; margin: 0 0 0.4rem; display: flex; flex-direction: column; }
+.case-row { padding: 0.7rem 0; }
+.case-row:first-child { padding-top: 0; }
+.case-row + .case-row {
+  border-top: 1px dashed var(--color-line);
+}
+.case-row dt {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-green-bright);
+  margin-bottom: 0.3rem;
+}
+[data-theme='dark'] .case-row dt { color: var(--color-green-bright); }
+.case-row dd {
+  margin: 0;
+  color: var(--color-ink-soft);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
 
 .project-tags { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 1.1rem 0; }
 .project-tags .chip {
@@ -1119,6 +1144,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   background: var(--color-green);
   color: #fdfcf8;
   overflow: hidden;
+  padding-block: clamp(5.5rem, 11vw, 9rem);
 }
 .philosophy::before {
   content: '';
