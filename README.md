@@ -1,5 +1,7 @@
 ![Status](https://img.shields.io/badge/status-live-1f7a4d) ![Stack](https://img.shields.io/badge/stack-HTML%20%C2%B7%20CSS%20%C2%B7%20JS-b5602e) ![Lang](https://img.shields.io/badge/lang-IT%20%2F%20EN-b3923f) ![Deps](https://img.shields.io/badge/dependencies-zero-1a1d1a)
 
+![Wimbledon](https://img.shields.io/badge/🎾-WIMBLEDON-0E5C2D?style=for-the-badge) ![Roland Garros](https://img.shields.io/badge/🎾-ROLAND%20GARROS-9C2E0E?style=for-the-badge)
+
 🇬🇧 **English** | 🇮🇹 **Italiano**
 
 * [English](#-english)
@@ -29,7 +31,7 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 |---|---|---|---|
 | — | Hero | `#hero` | Player card — identity, current focus, languages |
 | 01 | Profile | `#about` | Who I am, outside the resume |
-| 02 | Ranking | `#experience` | Interactive **Centre Court** — career entries plotted as points on a court; tap one to send the ball there |
+| 02 | Ranking | `#experience` | Interactive **Centre Court** — career entries plotted as points on a court; tap one to send the ball there and call the score live |
 | 03 | Draw | `#education` | Academic path as a tournament draw — round in progress, rounds still to come |
 | 04 | Scoreboard | `#skills` | Self-assessed skill bars, language proficiency, DigComp 2.1 self-assessment |
 | 05 | Trophies | `#certifications` | Certifications earned, with downloadable proof |
@@ -39,11 +41,13 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 
 ## Features
 
-🏟️ **Interactive Centre Court / Court Philippe-Chatrier** — career entries as points on a vertical tennis court (green for Wimbledon, clay for Roland Garros); clicking a card triggers a live score animation (15–0 → 30–0 → 40–0 → Game · Set · Match).
+🏟️ **Interactive Centre Court / Court Philippe-Chatrier** — career entries as points on a vertical tennis court (green for Wimbledon, clay for Roland Garros). Tapping a card moves the ball there and calls the score live, in order: **1st card → 15–0 · 2nd → 30–0 · 3rd → 40–0 · 4th → Game · Set · Match**.
+
+🎾🎬 **Cinematic court switch** — flipping between Wimbledon and Roland Garros triggers a real tennis ball that bounces across the screen (with squash/stretch and spin) inside a soft radial glow anchored to the switch button, instead of a flat colour flash. The switch button itself gives a little hop for tactile feedback. Fully skipped under `prefers-reduced-motion`.
 
 📊 **Score Strip** — a slim, sticky progress line under the navbar. Sections you've scrolled past go green (or orange at Roland Garros), the current one lights up and expands to show its name, the rest stay collapsed to a bare number. Built on the same `IntersectionObserver` already used for scroll reveals — no new dependency.
 
-🎾 **Dual Court theme** — switch between **Wimbledon** (light green palette) and **Roland Garros** (dark brown / clay palette) with a single button. The court name in the Ranking section, the footer photo, and all accent colours update instantly.
+🎾 **Dual Court theme** — switch between **Wimbledon** (light green palette) and **Roland Garros** (dark brown / clay palette) with a single button. The court name in the Ranking section, the footer photo, and all accent colours update instantly — with optional dark variants for both courts.
 
 🌍 **Bilingual IT/EN** — every string toggles live via `data-it` / `data-en` attributes, no reload.
 
@@ -51,7 +55,7 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 
 📱 **Fully responsive**, down to mobile — the Score Strip scrolls horizontally on small screens instead of duplicating markup.
 
-✨ **Micro-interactions** — click ripple, mouse-following 3D tilt on the player card, animated count-up stats — all respecting `prefers-reduced-motion`.
+✨ **Micro-interactions** — click ripple, mouse-following 3D tilt on the player card, animated count-up stats, court-switch ball hop — all respecting `prefers-reduced-motion`.
 
 ♿ **Accessible by default** — skip-to-content link, visible focus states, semantic landmarks, `aria-label`s on icon-only controls.
 
@@ -63,9 +67,9 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 |---|---|---|
 | ![Hero section](assets/images/screenshots/hero.png) | ![Interactive Centre Court](assets/images/screenshots/centre-court.png) | ![Project case studies](assets/images/screenshots/projects.png) |
 
-| Light mode | Dark mode |
+| Wimbledon theme | Roland Garros theme |
 |---|---|
-| ![Light theme](assets/images/screenshots/light.png) | ![Dark theme](assets/images/screenshots/dark.png) |
+| ![Wimbledon theme](assets/images/screenshots/wimbledon.png) | ![Roland Garros theme](assets/images/screenshots/roland-garros.png) |
 
 ## Design system
 
@@ -78,8 +82,9 @@ The whole site reads as a single match told in scroll. Every nav label matches t
 | `--accent` clay | Roland Garros theme — active state, never decorative |
 | `--color-gold` | Trophies / achievement context |
 | `.score-panel` | Player-card component (hero) |
-| `.cc-field` / `.cc-entry` | Centre Court career timeline — vertical SVG court, score animation |
-| `.cc-score-badge` | Live score badge per card (15–0 → 30–0 → 40–0 → Game) |
+| `.cc-field` / `.cc-entry` | Centre Court career timeline — vertical SVG court |
+| `.cc-call` | Live score call (15–0 → 30–0 → 40–0 → Game · Set · Match), mapped to card position |
+| `.court-transition-overlay` / `.court-transition-ball` | Bouncing-ball animation on Wimbledon ⇄ Roland Garros switch |
 | `.skills-board` / `.skill-row` | Scoreboard skill bars |
 | `.project-card` / `.case-study` | Match case study |
 | `.score-strip-item` | Scoreline step (Score Strip) |
@@ -124,6 +129,10 @@ Then open `http://localhost:8000`.
 
 Deployed via **GitHub Pages**. Every push to `main` publishes automatically.
 
+## A note on trademarks
+
+Wimbledon and Roland Garros are registered trademarks of the AELTC and the FFT respectively. This project does not use their official logos or branding — only an original colour palette and badge style inspired by each tournament's identity (green/grass for Wimbledon, terracotta/clay for Roland Garros).
+
 ## Philosophy
 
 > "The work never stops." — Jannik Sinner
@@ -166,7 +175,7 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 |---|---|---|---|
 | — | Hero | `#hero` | Scheda giocatore — identità, focus attuale, lingue |
 | 01 | Profilo | `#about` | Chi sono, oltre il curriculum |
-| 02 | Ranking | `#experience` | **Centre Court** interattivo — le esperienze come punti su un campo; tocca una voce per mandare lì la pallina |
+| 02 | Ranking | `#experience` | **Centre Court** interattivo — le esperienze come punti su un campo; tocca una voce per mandare lì la pallina e chiamare il punteggio in diretta |
 | 03 | Tabellone | `#education` | Il percorso accademico come tabellone di un torneo — turno in corso, turni ancora da disputare |
 | 04 | Scoreboard | `#skills` | Competenze autovalutate, livello linguistico, autovalutazione DigComp 2.1 |
 | 05 | Trofei | `#certifications` | Certificazioni conseguite, con attestati scaricabili |
@@ -176,11 +185,13 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 
 ## Caratteristiche
 
-🏟️ **Centre Court / Court Philippe-Chatrier interattivo** — le esperienze come punti su un campo da tennis verticale (verde per Wimbledon, terra per Roland Garros); cliccando una card parte un'animazione del punteggio (15–0 → 30–0 → 40–0 → Game · Set · Match).
+🏟️ **Centre Court / Court Philippe-Chatrier interattivo** — le esperienze come punti su un campo da tennis verticale (verde per Wimbledon, terra per Roland Garros). Cliccando una card la pallina si sposta lì e il punteggio viene chiamato in diretta, in ordine: **1ª card → 15–0 · 2ª → 30–0 · 3ª → 40–0 · 4ª → Game · Set · Match**.
+
+🎾🎬 **Cambio campo cinematografico** — passando da Wimbledon a Roland Garros (e viceversa) una vera pallina da tennis attraversa lo schermo rimbalzando (con schiacciamento e rotazione realistici) dentro un bagliore radiale ancorato al bottone, invece di un semplice flash di colore piatto. Il bottone stesso fa un piccolo balzo come feedback tattile. Tutto disattivato con `prefers-reduced-motion`.
 
 📊 **Score Strip** — una riga sottile e sticky sotto la navbar. Le sezioni già scrollate si colorano con il colore del campo, quella attuale si accende ed espande il proprio nome, le altre restano numeri compatti. Costruita sullo stesso `IntersectionObserver` già usato per le reveal in scroll — nessuna nuova dipendenza.
 
-🎾 **Doppio tema campo** — passa da **Wimbledon** (palette verde chiaro) a **Roland Garros** (palette marrone scuro / terra) con un solo pulsante. Il nome del campo nella sezione Ranking, la foto nel footer e tutti i colori di accento si aggiornano in tempo reale.
+🎾 **Doppio tema campo** — passa da **Wimbledon** (palette verde chiaro) a **Roland Garros** (palette marrone scuro / terra) con un solo pulsante. Il nome del campo nella sezione Ranking, la foto nel footer e tutti i colori di accento si aggiornano in tempo reale — con varianti dark opzionali per entrambi i campi.
 
 🌍 **Bilingue IT/EN** — ogni stringa cambia live tramite attributi `data-it` / `data-en`, senza ricaricare.
 
@@ -188,7 +199,7 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 
 📱 **Completamente responsive**, fino al mobile — lo Score Strip scorre orizzontalmente sugli schermi piccoli invece di duplicare markup.
 
-✨ **Micro-interazioni** — ripple al click, tilt 3D sulla scheda giocatore, numeri animati — tutto nel rispetto di `prefers-reduced-motion`.
+✨ **Micro-interazioni** — ripple al click, tilt 3D sulla scheda giocatore, numeri animati, balzo della pallina sul bottone campo — tutto nel rispetto di `prefers-reduced-motion`.
 
 ♿ **Accessibile di default** — skip-link, stati di focus visibili, landmark semantici, `aria-label` sui controlli a sola icona.
 
@@ -200,9 +211,9 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 |---|---|---|
 | ![Sezione hero](assets/images/screenshots/hero.png) | ![Centre Court interattivo](assets/images/screenshots/centre-court.png) | ![Case study progetti](assets/images/screenshots/projects.png) |
 
-| Tema chiaro | Tema scuro |
+| Tema Wimbledon | Tema Roland Garros |
 |---|---|
-| ![Tema chiaro](assets/images/screenshots/light.png) | ![Tema scuro](assets/images/screenshots/dark.png) |
+| ![Tema Wimbledon](assets/images/screenshots/wimbledon.png) | ![Tema Roland Garros](assets/images/screenshots/roland-garros.png) |
 
 ## Design system
 
@@ -211,11 +222,13 @@ L'intero sito si legge come un match raccontato in scroll. Ogni etichetta di nav
 | `--font-display` (Fraunces) | Solo titoli di sezione e hero |
 | `--font-body` (Inter) | Corpo del testo |
 | `--font-mono` (Space Mono) | Riservato ai "dati di partita": punteggi, percentuali, date, indici progetto, Score Strip |
-| `--color-green` | Identità di brand, CTA primarie |
-| `--color-clay` | Stato attivo — Score Strip, voce attiva del Centre Court — mai decorativo |
+| `--accent` verde | Tema Wimbledon — identità di brand, CTA primarie |
+| `--accent` terra | Tema Roland Garros — stato attivo, mai decorativo |
 | `--color-gold` | Contesto trofei / risultati |
 | `.score-panel` | Componente scheda-giocatore (hero) |
 | `.cc-field` / `.cc-entry` | Timeline carriera — Centre Court |
+| `.cc-call` | Chiamata punteggio in diretta (15–0 → 30–0 → 40–0 → Game · Set · Match), legata alla posizione della card |
+| `.court-transition-overlay` / `.court-transition-ball` | Animazione della pallina che rimbalza al cambio Wimbledon ⇄ Roland Garros |
 | `.skills-board` / `.skill-row` | Barre skill in stile scoreboard |
 | `.project-card` / `.case-study` | Case study dei match |
 | `.score-strip-item` | Step della scoreline (Score Strip) |
@@ -259,6 +272,10 @@ Poi apri `http://localhost:8000`.
 ## Deployment
 
 Distribuito tramite **GitHub Pages**. Ogni push su `main` pubblica automaticamente.
+
+## Nota sui marchi registrati
+
+Wimbledon e Roland Garros sono marchi registrati rispettivamente di AELTC e FFT. Questo progetto non utilizza i loro loghi ufficiali o materiale di branding — solo una palette di colori originale e uno stile dei badge ispirato all'identità di ciascun torneo (verde/erba per Wimbledon, terracotta/terra battuta per Roland Garros).
 
 ## Filosofia
 
