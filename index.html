@@ -35,14 +35,14 @@
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Principale">
-        <a href="#about"          data-it="Io"      data-en="About">Io</a>
-        <a href="#experience"     data-it="Carriera"      data-en="Career">Carriera</a>
-        <a href="#education"      data-it="Formazione"    data-en="Education">Formazione</a>
-        <a href="#skills"         data-it="Stats"         data-en="Stats">Stats</a>
-        <a href="#certifications" data-it="Certificazioni" data-en="Certifications">Certificazioni</a>
-        <a href="#projects"       data-it="Match"         data-en="Matches">Match</a>
-        <a href="#philosophy"     data-it="Filosofia"     data-en="Philosophy">Filosofia</a>
-        <a href="#contact"        data-it="Contatti"      data-en="Contact">Contatti</a>
+        <a href="#about"          data-it="Profilo"    data-en="Profile">Profilo</a>
+        <a href="#experience"     data-it="Ranking"    data-en="Ranking">Ranking</a>
+        <a href="#education"      data-it="Tabellone"  data-en="Draw">Tabellone</a>
+        <a href="#skills"         data-it="Scoreboard" data-en="Scoreboard">Scoreboard</a>
+        <a href="#certifications" data-it="Trofei"     data-en="Trophies">Trofei</a>
+        <a href="#projects"       data-it="Match"      data-en="Matches">Match</a>
+        <a href="#philosophy"     data-it="Filosofia"  data-en="Philosophy">Filosofia</a>
+        <a href="#contact"        data-it="Match Point" data-en="Match Point">Match Point</a>
       </nav>
 
       <div class="nav-actions">
@@ -61,6 +61,36 @@
       </div>
     </div>
   </header>
+
+  <!-- ============================= SCORE STRIP ============================= -->
+  <nav class="score-strip" id="scoreStrip" aria-label="Avanzamento del match">
+    <div class="container score-strip-track" id="scoreStripTrack">
+      <button class="score-strip-item" type="button" data-target="about">
+        <span class="ss-num" aria-hidden="true">01</span><span class="ss-label" data-it="Profilo" data-en="Profile">Profilo</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="experience">
+        <span class="ss-num" aria-hidden="true">02</span><span class="ss-label" data-it="Ranking" data-en="Ranking">Ranking</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="education">
+        <span class="ss-num" aria-hidden="true">03</span><span class="ss-label" data-it="Tabellone" data-en="Draw">Tabellone</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="skills">
+        <span class="ss-num" aria-hidden="true">04</span><span class="ss-label" data-it="Scoreboard" data-en="Scoreboard">Scoreboard</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="certifications">
+        <span class="ss-num" aria-hidden="true">05</span><span class="ss-label" data-it="Trofei" data-en="Trophies">Trofei</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="projects">
+        <span class="ss-num" aria-hidden="true">06</span><span class="ss-label" data-it="Match" data-en="Matches">Match</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="philosophy">
+        <span class="ss-num" aria-hidden="true">07</span><span class="ss-label" data-it="Filosofia" data-en="Philosophy">Filosofia</span>
+      </button>
+      <button class="score-strip-item" type="button" data-target="contact">
+        <span class="ss-num" aria-hidden="true">08</span><span class="ss-label" data-it="Match Point" data-en="Match Point">Match Point</span>
+      </button>
+    </div>
+  </nav>
 
   <main id="main">
     <!-- ============================= HERO ============================= -->
@@ -83,8 +113,8 @@
           <p class="hero-eyebrow"><span class="dot"></span>Andria, Italia</p>
           <h1 data-it="Un punto<br><span class='accent'>alla volta.</span>" data-en="One point<br><span class='accent'>at a time.</span>">Un punto<br><span class="accent">alla volta.</span></h1>
           <p class="hero-role"
-             data-it="Nicola Guglielmi, <span class='accent'>sviluppatore in formazione</span> — stessa testa che uso in campo: leggere il punto, eseguire, ripetere."
-             data-en="Nicola Guglielmi, <span class='accent'>developer in training</span> — same head I bring to the court: read the point, execute, repeat.">Nicola Guglielmi, <span class="accent">sviluppatore in formazione</span> — stessa testa che uso in campo: leggere il punto, eseguire, ripetere.</p>
+             data-it="Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class='accent'>leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte."
+             data-en="Nicola Guglielmi — I build software the same way I play a match: <span class='accent'>read the situation, execute</span>, and when it doesn't work, try again. Better, not harder.">Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class="accent">leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte.</p>
           <p class="hero-lead"
              data-it="Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno."
              data-en="I'm 17 and based in Andria, Puglia. I split my days between the court and the keyboard — in both, results come from repetition, attention to detail, and the will to get a little better with every round.">Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno.</p>
@@ -505,8 +535,8 @@
           <p class="eyebrow" data-it="In gioco" data-en="In play">In gioco</p>
           <h2 class="section-title" data-it="Match" data-en="Matches">Match</h2>
           <p class="section-sub"
-             data-it="Ogni progetto è un match a sé: un contesto da leggere, una strategia, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto."
-             data-en="Every project is its own match: a context to read, a strategy, an execution and a result. The tech stack is just the equipment — it matters less than how the point was played.">Ogni progetto è un match a sé: un contesto da leggere, una strategia, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto.</p>
+             data-it="Ogni progetto è un match a sé: un contesto da leggere, una decisione tecnica, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto."
+             data-en="Every project is its own match: a context to read, a technical decision, an execution and a result. The tech stack is just the equipment — it matters less than how the point was played.">Ogni progetto è un match a sé: un contesto da leggere, una decisione tecnica, un'esecuzione e un risultato. Lo stack tecnico è solo l'attrezzatura — conta meno di come è stato giocato il punto.</p>
         </div>
 
         <div class="projects-grid reveal-stagger reveal">
@@ -522,9 +552,9 @@
                     data-en="The company had no website yet — during my school-work placement I had to build an online presence from zero, on a tight schedule.">Durante il tirocinio scuola-lavoro l'azienda non aveva ancora un sito: serviva una presenza online costruita da zero, in tempi stretti.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Strategia" data-en="Strategy">Strategia</dt>
-                <dd data-it="Stack moderno e tipizzato — React, TypeScript e Tailwind CSS — per muoversi veloce senza perdere ordine nel codice."
-                    data-en="A modern, typed stack — React, TypeScript and Tailwind CSS — to move fast without losing order in the code.">Stack moderno e tipizzato — React, TypeScript e Tailwind CSS — per muoversi veloce senza perdere ordine nel codice.</dd>
+                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
+                <dd data-it="TypeScript per ridurre gli errori a runtime su una consegna a cliente singola, senza margine per un secondo giro di QA. Tailwind per restare veloce sul layout senza scrivere CSS da zero sotto scadenza."
+                    data-en="TypeScript to cut down runtime errors on a single client delivery with no room for a second QA pass. Tailwind to move fast on layout without writing CSS from scratch against a deadline.">TypeScript per ridurre gli errori a runtime su una consegna a cliente singola, senza margine per un secondo giro di QA. Tailwind per restare veloce sul layout senza scrivere CSS da zero sotto scadenza.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>
@@ -554,9 +584,9 @@
                     data-en="A template alone wasn't enough to tell people who I am — I needed a site that matched my identity to how I actually work.">Un template da solo non bastava a raccontare chi sono: serviva un sito che unisse la mia identità al modo in cui lavoro.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Strategia" data-en="Strategy">Strategia</dt>
-                <dd data-it="Costruire un design system originale usando il tennis come struttura, non solo come decorazione, e restare senza framework per restare leggero."
-                    data-en="Build an original design system using tennis as structure, not just decoration, and skip frameworks to keep things light.">Costruire un design system originale usando il tennis come struttura, non solo come decorazione, e restare senza framework per restare leggero.</dd>
+                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
+                <dd data-it="Niente framework: un sito statico a contenuto fisso non ha bisogno di un bundle React per restare manutenibile. HTML, CSS e JS vanilla caricano più leggeri e si modificano a mano senza build step."
+                    data-en="No framework: a static, content-fixed site doesn't need a React bundle to stay maintainable. Vanilla HTML, CSS and JS load lighter and can be hand-edited with no build step.">Niente framework: un sito statico a contenuto fisso non ha bisogno di un bundle React per restare manutenibile. HTML, CSS e JS vanilla caricano più leggeri e si modificano a mano senza build step.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>
@@ -586,9 +616,9 @@
                     data-en="Too many passwords, too many services — I needed a way to manage them without relying on third parties.">Troppe password, troppi servizi diversi: serviva un modo per gestirle senza affidarsi a terzi.</dd>
               </div>
               <div class="case-row">
-                <dt data-it="Strategia" data-en="Strategy">Strategia</dt>
-                <dd data-it="Applicazione locale in Python, con generazione automatica di password robuste e nessun dato che lascia il computer."
-                    data-en="A local Python application that generates strong passwords automatically, with every byte of data staying on the machine.">Applicazione locale in Python, con generazione automatica di password robuste e nessun dato che lascia il computer.</dd>
+                <dt data-it="Decisione tecnica" data-en="Technical decision">Decisione tecnica</dt>
+                <dd data-it="Python e Tkinter per restare locale: niente account, niente server, niente dati che lasciano il computer. La sicurezza viene dal non avere una superficie d'attacco di rete, non da un servizio cloud di cui fidarsi."
+                    data-en="Python and Tkinter to stay fully local: no account, no server, nothing leaving the machine. Security comes from having no network attack surface at all, not from trusting a cloud service.">Python e Tkinter per restare locale: niente account, niente server, niente dati che lasciano il computer. La sicurezza viene dal non avere una superficie d'attacco di rete, non da un servizio cloud di cui fidarsi.</dd>
               </div>
               <div class="case-row">
                 <dt data-it="Esecuzione" data-en="Execution">Esecuzione</dt>

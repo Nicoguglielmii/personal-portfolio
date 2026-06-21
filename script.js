@@ -196,6 +196,48 @@
   /* ---------------------------- Reduced motion check ---------------------------- */
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------------------------- Score Strip (scrollspy) ---------------------------- */
+  var scoreStrip = document.getElementById('scoreStrip');
+  if (scoreStrip) {
+    var ssEntries = Array.prototype.slice.call(scoreStrip.querySelectorAll('.score-strip-item'))
+      .map(function (item) {
+        var section = document.getElementById(item.getAttribute('data-target'));
+        return section ? { item: item, section: section } : null;
+      })
+      .filter(Boolean);
+
+    function ssSetActive(sectionId) {
+      var activeIndex = -1;
+      ssEntries.forEach(function (entry, i) {
+        if (entry.section.id === sectionId) activeIndex = i;
+      });
+      if (activeIndex === -1) return;
+
+      ssEntries.forEach(function (entry, i) {
+        entry.item.classList.remove('is-active', 'is-done');
+        if (i < activeIndex) entry.item.classList.add('is-done');
+        else if (i === activeIndex) entry.item.classList.add('is-active');
+      });
+      ssEntries[activeIndex].item.scrollIntoView({ block: 'nearest', inline: 'center' });
+    }
+
+    if (ssEntries.length && 'IntersectionObserver' in window) {
+      var ssObserver = new IntersectionObserver(function (observerEntries) {
+        observerEntries.forEach(function (entry) {
+          if (entry.isIntersecting) ssSetActive(entry.target.id);
+        });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
+
+      ssEntries.forEach(function (entry) { ssObserver.observe(entry.section); });
+    }
+
+    ssEntries.forEach(function (entry) {
+      entry.item.addEventListener('click', function () {
+        entry.section.scrollIntoView();
+      });
+    });
+  }
+
   /* ---------------------------- Click ripple effect ---------------------------- */
   if (!prefersReducedMotion) {
     var rippleTargets = document.querySelectorAll('.btn, .icon-btn, .back-to-top');
