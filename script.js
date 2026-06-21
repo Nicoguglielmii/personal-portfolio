@@ -155,4 +155,42 @@
     });
   }
 
+
+  /* ---------------------------- Language toggle (IT / EN) ---------------------------- */
+  var LANG_KEY = 'ng-portfolio-lang';
+  var langITBtn = document.getElementById('langIT');
+  var langENBtn = document.getElementById('langEN');
+  var translatables = document.querySelectorAll('[data-it][data-en]');
+
+  function applyLang(lang) {
+    translatables.forEach(function (el) {
+      var text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+    if (langITBtn) {
+      langITBtn.classList.toggle('is-active', lang === 'it');
+      langITBtn.setAttribute('aria-pressed', String(lang === 'it'));
+    }
+    if (langENBtn) {
+      langENBtn.classList.toggle('is-active', lang === 'en');
+      langENBtn.setAttribute('aria-pressed', String(lang === 'en'));
+    }
+    document.documentElement.setAttribute('lang', lang === 'en' ? 'en' : 'it');
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) { /* ignore */ }
+  }
+
+  function getPreferredLang() {
+    try {
+      var stored = localStorage.getItem(LANG_KEY);
+      if (stored === 'it' || stored === 'en') return stored;
+    } catch (e) { /* ignore */ }
+    var nav = navigator.language || '';
+    return nav.toLowerCase().startsWith('it') ? 'it' : 'it'; // default IT
+  }
+
+  applyLang(getPreferredLang());
+
+  if (langITBtn) langITBtn.addEventListener('click', function () { applyLang('it'); });
+  if (langENBtn) langENBtn.addEventListener('click', function () { applyLang('en'); });
+
 })();

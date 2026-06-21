@@ -14,7 +14,7 @@
   <meta property="og:description" content="Portfolio di uno studente di Informatica che tratta il codice come il Centre Court: precisione, pazienza, un punto alla volta.">
   <meta property="og:image" content="assets/images/og-image.jpg">
 
-  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Vai al contenuto</a>
+  <a class="skip-link" href="#main" data-it="Vai al contenuto" data-en="Skip to content">Vai al contenuto</a>
 
   <!-- ============================= NAVBAR ============================= -->
   <header class="navbar" id="navbar">
@@ -35,17 +35,21 @@
       </a>
 
       <nav class="nav-links" id="navLinks" aria-label="Principale">
-        <a href="#about">Chi sono</a>
-        <a href="#experience">Esperienza</a>
-        <a href="#education">Formazione</a>
-        <a href="#skills">Competenze</a>
-        <a href="#certifications">Certificazioni</a>
-        <a href="#projects">Progetti</a>
-        <a href="#philosophy">Filosofia</a>
-        <a href="#contact">Contatti</a>
+        <a href="#about"          data-it="Chi sono"      data-en="About">Chi sono</a>
+        <a href="#experience"     data-it="Esperienza"    data-en="Experience">Esperienza</a>
+        <a href="#education"      data-it="Formazione"    data-en="Education">Formazione</a>
+        <a href="#skills"         data-it="Competenze"    data-en="Skills">Competenze</a>
+        <a href="#certifications" data-it="Certificazioni" data-en="Certifications">Certificazioni</a>
+        <a href="#projects"       data-it="Progetti"      data-en="Projects">Progetti</a>
+        <a href="#philosophy"     data-it="Filosofia"     data-en="Philosophy">Filosofia</a>
+        <a href="#contact"        data-it="Contatti"      data-en="Contact">Contatti</a>
       </nav>
 
       <div class="nav-actions">
+        <div class="lang-toggle" role="group" aria-label="Lingua / Language">
+          <button type="button" id="langIT" class="is-active" aria-pressed="true">IT</button>
+          <button type="button" id="langEN" aria-pressed="false">EN</button>
+        </div>
         <button class="icon-btn theme-toggle" id="themeToggle" type="button" aria-label="Attiva/disattiva modalità scura">
           <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -78,33 +82,57 @@
         <div class="hero-copy">
           <p class="hero-eyebrow"><span class="dot"></span>Andria, Italia</p>
           <h1>Nicola<br>Guglielmi</h1>
-          <p class="hero-role">Studente di Informatica e Telecomunicazioni, <span class="accent">aspirante sviluppatore web e software</span></p>
-          <p class="hero-lead">Ho 17 anni, vivo ad Andria, in Puglia, e divido il mio tempo tra righe di codice e righe del campo da tennis. Entrambi mi hanno insegnato la stessa lezione: concentrarsi sul punto successivo, non sull'intera partita.</p>
+          <p class="hero-role"
+             data-it="Studente di Informatica e Telecomunicazioni, <span class='accent'>aspirante sviluppatore web e software</span>"
+             data-en="IT &amp; Telecommunications Student, <span class='accent'>aspiring web &amp; software developer</span>">Studente di Informatica e Telecomunicazioni, <span class="accent">aspirante sviluppatore web e software</span></p>
+          <p class="hero-lead"
+             data-it="Ho 17 anni, vivo ad Andria, in Puglia, e divido il mio tempo tra righe di codice e righe del campo da tennis. Entrambi mi hanno insegnato la stessa lezione: concentrarsi sul punto successivo, non sull'intera partita."
+             data-en="I'm 17, based in Andria, Puglia, and I split my time between lines of code and lines on the tennis court. Both have taught me the same lesson: focus on the next point, not the whole match.">Ho 17 anni, vivo ad Andria, in Puglia, e divido il mio tempo tra righe di codice e righe del campo da tennis. Entrambi mi hanno insegnato la stessa lezione: concentrarsi sul punto successivo, non sull'intera partita.</p>
 
           <div class="hero-cta">
-            <a href="#projects" class="btn btn--primary">Guarda i miei progetti</a>
-            <a href="#contact" class="btn btn--ghost">Contattami</a>
+            <a href="#projects" class="btn btn--primary" data-it="Guarda i miei progetti" data-en="See my projects">Guarda i miei progetti</a>
+            <a href="#contact"  class="btn btn--ghost"   data-it="Contattami"             data-en="Get in touch">Contattami</a>
           </div>
 
           <div class="hero-meta">
-            <div class="hero-meta-item"><strong>2022 – Oggi</strong>Diploma IT e Telecomunicazioni</div>
-            <div class="hero-meta-item"><strong>B2</strong>Livello d'inglese</div>
-            <div class="hero-meta-item"><strong>Python · Java · C#</strong>Linguaggi principali</div>
+            <div class="hero-meta-item">
+              <strong>2022 – <span data-it="Oggi" data-en="Now">Oggi</span></strong>
+              <span data-it="Diploma IT e Telecomunicazioni" data-en="IT &amp; Telecom Diploma">Diploma IT e Telecomunicazioni</span>
+            </div>
+            <div class="hero-meta-item">
+              <strong>B2</strong>
+              <span data-it="Livello d'inglese" data-en="English level">Livello d'inglese</span>
+            </div>
+            <div class="hero-meta-item">
+              <strong>Python · Java · C#</strong>
+              <span data-it="Linguaggi principali" data-en="Main languages">Linguaggi principali</span>
+            </div>
           </div>
         </div>
 
         <div class="hero-visual reveal">
           <div class="score-panel">
             <div class="score-panel-head">
-              <span>Scheda Giocatore</span>
+              <span data-it="Scheda Giocatore" data-en="Player Card">Scheda Giocatore</span>
               <span>2026</span>
             </div>
-            <div class="score-panel-row"><span class="label">Nome</span><span class="value">N. Guglielmi</span></div>
-            <div class="score-panel-row"><span class="label">Base</span><span class="value">Andria, IT</span></div>
-            <div class="score-panel-row"><span class="label">Studi</span><span class="value">IT e Telecom</span></div>
-            <div class="score-panel-row"><span class="label">Lingue</span><span class="value">IT / EN B2</span></div>
-            <div class="score-panel-row"><span class="label">Stato</span><span class="value">Aperto a stage</span></div>
-            <div class="score-panel-foot">La vittoria appartiene ai più tenaci</div>
+            <div class="score-panel-row">
+              <span class="label" data-it="Nome" data-en="Name">Nome</span>
+              <span class="value">N. Guglielmi</span>
+            </div>
+            <div class="score-panel-row">
+              <span class="label" data-it="Base" data-en="Based in">Base</span>
+              <span class="value">Andria, IT</span>
+            </div>
+            <div class="score-panel-row">
+              <span class="label" data-it="Studi" data-en="Studies">Studi</span>
+              <span class="value" data-it="IT e Telecom" data-en="IT &amp; Telecom">IT e Telecom</span>
+            </div>
+            <div class="score-panel-row">
+              <span class="label" data-it="Lingue" data-en="Languages">Lingue</span>
+              <span class="value">IT / EN B2</span>
+            </div>
+            <div class="score-panel-foot" data-it="La vittoria appartiene ai più tenaci" data-en="Victory belongs to the most tenacious">La vittoria appartiene ai più tenaci</div>
           </div>
         </div>
       </div>
@@ -123,28 +151,33 @@
           </div>
 
           <div class="about-text reveal">
-            <p class="eyebrow">Chi sono</p>
-            <h2 class="section-title">Pazienza, ripetizione e un piano a lungo termine</h2>
+            <p class="eyebrow" data-it="Chi sono" data-en="About">Chi sono</p>
+            <h2 class="section-title"
+                data-it="Pazienza, ripetizione e un piano a lungo termine"
+                data-en="Patience, repetition and a long-term plan">Pazienza, ripetizione e un piano a lungo termine</h2>
 
-            <p style="margin-top:1.4rem;">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma di Istruzione Secondaria Superiore in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, le basi dello sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
-            <p>Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare un nuovo linguaggio e nel costruire cose che funzionano davvero, non solo in teoria.</p>
+            <p style="margin-top:1.4rem;"
+               data-it="Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma di Istruzione Secondaria Superiore in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, le basi dello sviluppo web con HTML e CSS, architettura dei computer e reti informatiche."
+               data-en="I'm a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Secondary School Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. My programme covers Python and Java programming, web development with HTML and CSS, computer architecture, and networking.">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma di Istruzione Secondaria Superiore in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, le basi dello sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
+            <p data-it="Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare un nuovo linguaggio e nel costruire cose che funzionano davvero, non solo in teoria."
+               data-en="Outside school, tennis is what truly taught me to follow through. A match isn't won with one perfect shot, but by showing up for the next rally, even after a mistake. I bring the same mindset to debugging, learning new languages, and building things that actually work — not just in theory.">Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare un nuovo linguaggio e nel costruire cose che funzionano davvero, non solo in teoria.</p>
 
             <div class="stat-row">
               <div class="stat-card">
                 <div class="stat-number">4</div>
-                <div class="stat-label">Anni di studio in IT</div>
+                <div class="stat-label" data-it="Anni di studio in IT" data-en="Years studying IT">Anni di studio in IT</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">8</div>
-                <div class="stat-label">Certificazioni conseguite</div>
+                <div class="stat-label" data-it="Certificazioni conseguite" data-en="Certifications earned">Certificazioni conseguite</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">B2</div>
-                <div class="stat-label">Livello d'inglese</div>
+                <div class="stat-label" data-it="Livello d'inglese" data-en="English level">Livello d'inglese</div>
               </div>
               <div class="stat-card">
                 <div class="stat-number">6/6</div>
-                <div class="stat-label">Punteggio massimo comp. digitali</div>
+                <div class="stat-label" data-it="Punteggio massimo comp. digitali" data-en="Max score digital competences">Punteggio massimo comp. digitali</div>
               </div>
             </div>
           </div>
@@ -156,9 +189,11 @@
     <section class="section section--soft" id="experience">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Sul campo</p>
-          <h2 class="section-title">Esperienza</h2>
-          <p class="section-sub">Il mio percorso professionale è appena iniziato: ecco la mia prima esperienza sul campo, con altri spazi pronti per quelle future. Tocca una voce per far correre la pallina sul Centre Court.</p>
+          <p class="eyebrow" data-it="Sul campo" data-en="On the court">Sul campo</p>
+          <h2 class="section-title" data-it="Esperienza" data-en="Experience">Esperienza</h2>
+          <p class="section-sub"
+             data-it="Il mio percorso professionale è appena iniziato: ecco la mia prima esperienza sul campo, con altri spazi pronti per quelle future. Tocca una voce per far correre la pallina sul Centre Court."
+             data-en="My professional journey has just begun — here's my first real-world experience, with more slots ready for what comes next. Tap an entry to move the ball across the Centre Court.">Il mio percorso professionale è appena iniziato: ecco la mia prima esperienza sul campo, con altri spazi pronti per quelle future. Tocca una voce per far correre la pallina sul Centre Court.</p>
         </div>
 
         <div class="centre-court reveal" id="centreCourt">
@@ -175,37 +210,37 @@
             </svg>
             <div class="cc-ball" id="ccBall" aria-hidden="true"></div>
             <div class="cc-call" id="ccCall" aria-live="polite">Game · Set · Match</div>
-            <span class="cc-field-tag cc-field-tag--left">Punto di partenza</span>
-            <span class="cc-field-tag cc-field-tag--right">Tocca un'esperienza</span>
+            <span class="cc-field-tag cc-field-tag--left" data-it="Punto di partenza" data-en="Starting point">Punto di partenza</span>
+            <span class="cc-field-tag cc-field-tag--right" data-it="Tocca un'esperienza" data-en="Tap an entry">Tocca un'esperienza</span>
           </div>
 
           <div class="cc-entries">
             <button class="cc-entry is-current is-active" type="button" data-pos-x="31" data-pos-y="38">
-              <span class="cc-entry-period">03 – 16 giugno 2026</span>
+              <span class="cc-entry-period" data-it="03 – 16 giugno 2026" data-en="03 – 16 June 2026">03 – 16 giugno 2026</span>
               <h3>FSL — Fi.Co. SRL</h3>
-              <p class="org">Formazione Scuola-Lavoro (FSL) · Andria, Italia</p>
+              <p class="org" data-it="Formazione Scuola-Lavoro (FSL) · Andria, Italia" data-en="School-Work Programme (FSL) · Andria, Italy">Formazione Scuola-Lavoro (FSL) · Andria, Italia</p>
               <ul>
-                <li>Sviluppo e realizzazione del sito web aziendale, dalla struttura alla messa online</li>
+                <li data-it="Sviluppo e realizzazione del sito web aziendale, dalla struttura alla messa online" data-en="Full development of the company website, from structure to deployment">Sviluppo e realizzazione del sito web aziendale, dalla struttura alla messa online</li>
               </ul>
               <div class="chip-row"><span class="chip">React</span><span class="chip">Tailwind CSS</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Vercel</span></div>
             </button>
 
             <button class="cc-entry is-upcoming" type="button" data-pos-x="69" data-pos-y="38">
-              <span class="cc-entry-period">In arrivo</span>
-              <h3>Prossima esperienza</h3>
-              <p class="org">Un nuovo punto sul campo, presto qui</p>
+              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
+              <h3 data-it="Prossima esperienza" data-en="Next experience">Prossima esperienza</h3>
+              <p class="org" data-it="Un nuovo punto sul campo, presto qui" data-en="A new point on the court, coming soon">Un nuovo punto sul campo, presto qui</p>
             </button>
 
             <button class="cc-entry is-upcoming" type="button" data-pos-x="31" data-pos-y="62">
-              <span class="cc-entry-period">In arrivo</span>
-              <h3>Prossimo turno</h3>
-              <p class="org">Un nuovo capitolo è in arrivo</p>
+              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
+              <h3 data-it="Prossimo turno" data-en="Next round">Prossimo turno</h3>
+              <p class="org" data-it="Un nuovo capitolo è in arrivo" data-en="A new chapter is on its way">Un nuovo capitolo è in arrivo</p>
             </button>
 
             <button class="cc-entry is-upcoming is-match-point" type="button" data-pos-x="69" data-pos-y="62">
-              <span class="cc-entry-period">In arrivo</span>
+              <span class="cc-entry-period" data-it="In arrivo" data-en="Coming soon">In arrivo</span>
               <h3>Match point</h3>
-              <p class="org">Un'altra esperienza, in arrivo</p>
+              <p class="org" data-it="Un'altra esperienza, in arrivo" data-en="Another experience, on the way">Un'altra esperienza, in arrivo</p>
             </button>
           </div>
         </div>
@@ -216,23 +251,25 @@
     <section class="section section--surface" id="education">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Il tabellone</p>
-          <h2 class="section-title">Formazione</h2>
-          <p class="section-sub">Il mio percorso accademico finora — e il prossimo turno ancora da sorteggiare.</p>
+          <p class="eyebrow" data-it="Il tabellone" data-en="The draw">Il tabellone</p>
+          <h2 class="section-title" data-it="Formazione" data-en="Education">Formazione</h2>
+          <p class="section-sub"
+             data-it="Il mio percorso accademico finora — e il prossimo turno ancora da sorteggiare."
+             data-en="My academic path so far — and the next round yet to be drawn.">Il mio percorso accademico finora — e il prossimo turno ancora da sorteggiare.</p>
         </div>
 
         <div class="timeline">
           <div class="timeline-item is-current reveal">
             <span class="timeline-node" aria-hidden="true"></span>
             <div class="timeline-card">
-              <div class="timeline-period">18 set 2022 – Oggi · <strong>In corso</strong></div>
-              <h3>Diploma di Istruzione Secondaria Superiore</h3>
-              <p class="org">Informatica e Telecomunicazioni — ITT Sen. O. Jannuzzi, Andria, Italia</p>
+              <div class="timeline-period" data-it="18 set 2022 – Oggi · <strong>In corso</strong>" data-en="18 Sep 2022 – Now · <strong>In progress</strong>">18 set 2022 – Oggi · <strong>In corso</strong></div>
+              <h3 data-it="Diploma di Istruzione Secondaria Superiore" data-en="Secondary School Diploma">Diploma di Istruzione Secondaria Superiore</h3>
+              <p class="org" data-it="Informatica e Telecomunicazioni — ITT Sen. O. Jannuzzi, Andria, Italia" data-en="IT &amp; Telecommunications — ITT Sen. O. Jannuzzi, Andria, Italy">Informatica e Telecomunicazioni — ITT Sen. O. Jannuzzi, Andria, Italia</p>
               <ul>
-                <li>Programmazione: Python, Java</li>
-                <li>Sviluppo web: HTML, CSS</li>
-                <li>Architettura dei computer</li>
-                <li>Sistemi e reti informatiche</li>
+                <li data-it="Programmazione: Python, Java" data-en="Programming: Python, Java">Programmazione: Python, Java</li>
+                <li data-it="Sviluppo web: HTML, CSS" data-en="Web development: HTML, CSS">Sviluppo web: HTML, CSS</li>
+                <li data-it="Architettura dei computer" data-en="Computer architecture">Architettura dei computer</li>
+                <li data-it="Sistemi e reti informatiche" data-en="Computer systems and networks">Sistemi e reti informatiche</li>
               </ul>
               <div class="chip-row">
                 <span class="chip">EQF Livello 4</span>
@@ -243,9 +280,9 @@
           <div class="timeline-item reveal">
             <span class="timeline-node" aria-hidden="true"></span>
             <div class="timeline-card">
-              <div class="timeline-period">2026 → Futuro</div>
-              <h3>Prossimo capitolo</h3>
-              <p class="org">Formazione continua in ambito informatico e sviluppo software</p>
+              <div class="timeline-period" data-it="2026 → Futuro" data-en="2026 → Future">2026 → Futuro</div>
+              <h3 data-it="Laurea Triennale (obiettivo post-diploma)" data-en="Bachelor's Degree (post-diploma goal)">Laurea Triennale (obiettivo post-diploma)</h3>
+              <p class="org" data-it="Informatica · Università ancora da scegliere" data-en="Computer Science · University TBD">Informatica · Università ancora da scegliere</p>
             </div>
           </div>
         </div>
@@ -256,19 +293,21 @@
     <section class="section section--soft" id="skills">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Il segnapunti</p>
-          <h2 class="section-title">Competenze</h2>
-          <p class="section-sub">Livello di competenza autovalutato sui linguaggi e gli strumenti che uso attualmente, più un'autovalutazione delle competenze digitali basata sul framework europeo DigComp 2.1.</p>
+          <p class="eyebrow" data-it="Il segnapunti" data-en="The scoreboard">Il segnapunti</p>
+          <h2 class="section-title" data-it="Competenze" data-en="Skills">Competenze</h2>
+          <p class="section-sub"
+             data-it="Livello di competenza autovalutato sui linguaggi e gli strumenti che uso attualmente, più un'autovalutazione delle competenze digitali basata sul framework europeo DigComp 2.1."
+             data-en="Self-assessed proficiency in the languages and tools I currently use, plus a digital competence self-assessment based on the European DigComp 2.1 framework.">Livello di competenza autovalutato sui linguaggi e gli strumenti che uso attualmente, più un'autovalutazione delle competenze digitali basata sul framework europeo DigComp 2.1.</p>
         </div>
 
         <div class="skills-board reveal">
           <div class="skills-board-header">
-            <span>Competenze Tecniche</span>
-            <span>Autovalutate</span>
+            <span data-it="Competenze Tecniche" data-en="Technical Skills">Competenze Tecniche</span>
+            <span data-it="Autovalutate" data-en="Self-assessed">Autovalutate</span>
           </div>
           <div class="skills-groups">
             <div class="skills-group">
-              <h3>Linguaggi di programmazione</h3>
+              <h3 data-it="Linguaggi di programmazione" data-en="Programming languages">Linguaggi di programmazione</h3>
               <div class="skill-row" data-score="85">
                 <div class="skill-row-top"><span>Python</span><span class="skill-score">85%</span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
@@ -288,7 +327,7 @@
             </div>
 
             <div class="skills-group">
-              <h3>Web e strumenti</h3>
+              <h3 data-it="Web e strumenti" data-en="Web &amp; tools">Web e strumenti</h3>
               <div class="skill-row" data-score="88">
                 <div class="skill-row-top"><span>HTML5</span><span class="skill-score">88%</span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
@@ -298,11 +337,11 @@
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="75">
-                <div class="skill-row-top"><span>Pacchetto Microsoft Office</span><span class="skill-score">75%</span></div>
+                <div class="skill-row-top"><span data-it="Pacchetto Microsoft Office" data-en="Microsoft Office Suite">Pacchetto Microsoft Office</span><span class="skill-score">75%</span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
               <div class="skill-row" data-score="90">
-                <div class="skill-row-top"><span>Comunicazione e lavoro di squadra</span><span class="skill-score">90%</span></div>
+                <div class="skill-row-top"><span data-it="Comunicazione e lavoro di squadra" data-en="Communication &amp; teamwork">Comunicazione e lavoro di squadra</span><span class="skill-score">90%</span></div>
                 <div class="skill-bar"><div class="skill-bar-fill"></div></div>
               </div>
             </div>
@@ -310,50 +349,53 @@
         </div>
 
         <div style="margin-top:2.5rem;" class="reveal">
-          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;">Quadro delle Competenze Digitali 2.1 — autovalutazione</h3>
+          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;"
+              data-it="Quadro delle Competenze Digitali 2.1 — autovalutazione"
+              data-en="Digital Competence Framework 2.1 — self-assessment">Quadro delle Competenze Digitali 2.1 — autovalutazione</h3>
           <div class="dc-grid">
             <div class="dc-card">
               <div class="dc-level">4<small> / 6</small></div>
-              <div class="dc-name">Alfabetizzazione informatica e sui dati</div>
-              <span class="dc-tag">Intermedio</span>
+              <div class="dc-name" data-it="Alfabetizzazione informatica e sui dati" data-en="Information &amp; data literacy">Alfabetizzazione informatica e sui dati</div>
+              <span class="dc-tag" data-it="Intermedio" data-en="Intermediate">Intermedio</span>
             </div>
             <div class="dc-card">
               <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name">Comunicazione e collaborazione</div>
-              <span class="dc-tag">Avanzato</span>
+              <div class="dc-name" data-it="Comunicazione e collaborazione" data-en="Communication &amp; collaboration">Comunicazione e collaborazione</div>
+              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
             </div>
             <div class="dc-card">
               <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name">Creazione di contenuti digitali</div>
-              <span class="dc-tag">Avanzato</span>
+              <div class="dc-name" data-it="Creazione di contenuti digitali" data-en="Digital content creation">Creazione di contenuti digitali</div>
+              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
             </div>
             <div class="dc-card">
               <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name">Sicurezza</div>
-              <span class="dc-tag">Avanzato</span>
+              <div class="dc-name" data-it="Sicurezza" data-en="Safety">Sicurezza</div>
+              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
             </div>
             <div class="dc-card">
               <div class="dc-level">6<small> / 6</small></div>
-              <div class="dc-name">Risoluzione dei problemi</div>
-              <span class="dc-tag">Avanzato</span>
+              <div class="dc-name" data-it="Risoluzione dei problemi" data-en="Problem solving">Risoluzione dei problemi</div>
+              <span class="dc-tag" data-it="Avanzato" data-en="Advanced">Avanzato</span>
             </div>
           </div>
         </div>
 
         <div style="margin-top:2.5rem;" class="reveal">
-          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;">Lingue</h3>
+          <h3 style="font-family:var(--font-mono); font-size:0.8rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--color-ink-faint); margin-bottom:1rem;"
+              data-it="Lingue" data-en="Languages">Lingue</h3>
           <div class="lang-grid">
             <div class="lang-card">
-              <div class="lang-card-top"><h4>Italiano</h4><span class="lang-level-badge">Madrelingua</span></div>
+              <div class="lang-card-top"><h4 data-it="Italiano" data-en="Italian">Italiano</h4><span class="lang-level-badge" data-it="Madrelingua" data-en="Native">Madrelingua</span></div>
             </div>
             <div class="lang-card">
-              <div class="lang-card-top"><h4>Inglese</h4><span class="lang-level-badge">B2 complessivo</span></div>
+              <div class="lang-card-top"><h4 data-it="Inglese" data-en="English">Inglese</h4><span class="lang-level-badge" data-it="B2 complessivo" data-en="Overall B2">B2 complessivo</span></div>
               <div class="lang-skills">
-                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span>Ascolto</span></div>
-                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span>Lettura</span></div>
-                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span>Scrittura</span></div>
-                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span>Produz. orale</span></div>
-                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span>Interaz. orale</span></div>
+                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Ascolto" data-en="Listening">Ascolto</span></div>
+                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Lettura" data-en="Reading">Lettura</span></div>
+                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Scrittura" data-en="Writing">Scrittura</span></div>
+                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Produz. orale" data-en="Spoken prod.">Produz. orale</span></div>
+                <div class="lang-skill" data-score="67"><div class="mini-bar"><div class="mini-bar-fill"></div></div><span data-it="Interaz. orale" data-en="Spoken int.">Interaz. orale</span></div>
               </div>
             </div>
           </div>
@@ -365,19 +407,21 @@
     <section class="section section--surface" id="certifications">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">La bacheca dei trofei</p>
-          <h2 class="section-title">Certificazioni</h2>
-          <p class="section-sub">Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e intelligenza artificiale.</p>
+          <p class="eyebrow" data-it="La bacheca dei trofei" data-en="Trophy cabinet">La bacheca dei trofei</p>
+          <h2 class="section-title" data-it="Certificazioni" data-en="Certifications">Certificazioni</h2>
+          <p class="section-sub"
+             data-it="Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e intelligenza artificiale."
+             data-en="Eight certifications earned so far, from English language to networking, Python, SQL and artificial intelligence.">Otto certificazioni conseguite finora, dalla lingua inglese al networking, fino a Python, SQL e intelligenza artificiale.</p>
         </div>
 
         <div class="cert-grid reveal-stagger reveal">
           <div class="cert-card">
             <span class="cert-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3h8l4 4v14H4V3z" opacity="0"/><path d="M3 5h18M3 5l2-2h14l2 2M3 5v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5"/><path d="M9 9h6M9 13h6M9 17h3"/></svg></span>
-            <h3>Certificazione Inglese B2</h3>
-            <p class="cert-issuer">Certificazione linguistica — Quadro Comune Europeo</p>
+            <h3 data-it="Certificazione Inglese B2" data-en="English B2 Certificate">Certificazione Inglese B2</h3>
+            <p class="cert-issuer" data-it="Certificazione linguistica — Quadro Comune Europeo" data-en="Language certification — Common European Framework">Certificazione linguistica — Quadro Comune Europeo</p>
             <a class="cert-download" href="assets/certificates/b2-inglese.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -387,7 +431,7 @@
             <p class="cert-issuer">Cisco Networking Academy</p>
             <a class="cert-download" href="assets/certificates/cisco-it-essentials.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -397,7 +441,7 @@
             <p class="cert-issuer">Cisco Networking Academy</p>
             <a class="cert-download" href="assets/certificates/cisco-ccna.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -407,7 +451,7 @@
             <p class="cert-issuer">University of Helsinki &amp; Reaktor</p>
             <a class="cert-download" href="assets/certificates/elements-of-ai.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -417,7 +461,7 @@
             <p class="cert-issuer">GitHub</p>
             <a class="cert-download" href="assets/certificates/github-skills.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -427,7 +471,7 @@
             <p class="cert-issuer">Kaggle</p>
             <a class="cert-download" href="assets/certificates/kaggle-python.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -437,7 +481,7 @@
             <p class="cert-issuer">Kaggle</p>
             <a class="cert-download" href="assets/certificates/kaggle-sql.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
 
@@ -447,7 +491,7 @@
             <p class="cert-issuer">IBM</p>
             <a class="cert-download" href="assets/certificates/ibm-skillsbuild.pdf" download>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><polyline points="7 10 12 15 17 10"/><line x1="4" y1="20" x2="20" y2="20"/></svg>
-              Scarica attestato
+              <span data-it="Scarica attestato" data-en="Download certificate">Scarica attestato</span>
             </a>
           </div>
         </div>
@@ -458,37 +502,42 @@
     <section class="section section--soft" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Gli scambi migliori</p>
-          <h2 class="section-title">Progetti</h2>
-          <p class="section-sub">Tre progetti reali: un sito aziendale in produzione, questo portfolio e un tool desktop in Python.</p>
+          <p class="eyebrow" data-it="In gioco" data-en="In play">In gioco</p>
+          <h2 class="section-title" data-it="Progetti" data-en="Projects">Progetti</h2>
+          <p class="section-sub"
+             data-it="Le cose che ho costruito — e quelle ancora in costruzione."
+             data-en="Things I've built — and things still being built.">Le cose che ho costruito — e quelle ancora in costruzione.</p>
         </div>
 
-        <div class="project-grid reveal-stagger reveal">
+        <div class="projects-grid">
           <div class="project-card is-live">
-            <span class="project-ribbon">Live</span>
+            <span class="project-ribbon" data-it="Live" data-en="Live">Live</span>
             <span class="project-index">01</span>
-            <h3>Sito Web Aziendale — Fi.Co. SRL</h3>
-            <p>Sito web reale sviluppato per l'azienda Fi.Co. SRL durante il mio percorso di Formazione Scuola-Lavoro, online e in produzione su Vercel.</p>
-            <div class="project-tags"><span class="chip">React</span><span class="chip">Tailwind CSS</span><span class="chip">TypeScript</span><span class="chip">Vite</span><span class="chip">Vercel</span></div>
-            <a class="project-link" href="https://sito-fico.vercel.app/" target="_blank" rel="noopener noreferrer">Clicca qui</a>
+            <h3 data-it="Sito Web Fi.Co. SRL" data-en="Fi.Co. SRL Website">Sito Web Fi.Co. SRL</h3>
+            <p data-it="Sito aziendale realizzato durante il tirocinio FSL — progettato, sviluppato e messo online da zero con React, Tailwind CSS e TypeScript."
+               data-en="Company website built during my FSL placement — designed, developed and deployed from scratch using React, Tailwind CSS and TypeScript.">Sito aziendale realizzato durante il tirocinio FSL — progettato, sviluppato e messo online da zero con React, Tailwind CSS e TypeScript.</p>
+            <div class="project-tags"><span class="chip">React</span><span class="chip">TypeScript</span><span class="chip">Tailwind CSS</span><span class="chip">Vite</span><span class="chip">Vercel</span></div>
+            <a class="project-link" href="https://sito-fico.vercel.app/" target="_blank" rel="noopener noreferrer" data-it="Clicca qui" data-en="View site">Clicca qui</a>
           </div>
 
           <div class="project-card is-live">
-            <span class="project-ribbon">Live</span>
+            <span class="project-ribbon" data-it="Live" data-en="Live">Live</span>
             <span class="project-index">02</span>
-            <h3>Portfolio Personale</h3>
-            <p>Il sito che stai guardando proprio ora — progettato e costruito da zero senza framework, a tema tennis con un minimalismo ispirato al Centre Court, pubblicato su GitHub Pages.</p>
+            <h3 data-it="Portfolio Personale" data-en="Personal Portfolio">Portfolio Personale</h3>
+            <p data-it="Il sito che stai guardando proprio ora — progettato e costruito da zero senza framework, a tema tennis con un minimalismo ispirato al Centre Court, pubblicato su GitHub Pages."
+               data-en="The site you're looking at right now — designed and built from scratch without any framework, tennis-themed with Centre Court minimalism, published on GitHub Pages.">Il sito che stai guardando proprio ora — progettato e costruito da zero senza framework, a tema tennis con un minimalismo ispirato al Centre Court, pubblicato su GitHub Pages.</p>
             <div class="project-tags"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JS Vanilla</span></div>
-            <a class="project-link" href="#hero">Guardalo ora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
+            <a class="project-link" href="#hero" data-it="Guardalo ora" data-en="You're here">Guardalo ora <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></a>
           </div>
 
           <div class="project-card is-code">
-            <span class="project-ribbon">Codice</span>
+            <span class="project-ribbon" data-it="Codice" data-en="Code">Codice</span>
             <span class="project-index">03</span>
-            <h3>Password Manager con GUI</h3>
-            <p>Gestore di password locale scritto in Python con interfaccia grafica, pensato per generare, salvare e recuperare credenziali in modo semplice e sicuro.</p>
+            <h3 data-it="Password Manager con GUI" data-en="GUI Password Manager">Password Manager con GUI</h3>
+            <p data-it="Gestore di password locale scritto in Python con interfaccia grafica, pensato per generare, salvare e recuperare credenziali in modo semplice e sicuro."
+               data-en="Local password manager written in Python with a graphical interface, designed to generate, store and retrieve credentials simply and securely.">Gestore di password locale scritto in Python con interfaccia grafica, pensato per generare, salvare e recuperare credenziali in modo semplice e sicuro.</p>
             <div class="project-tags"><span class="chip">Python</span><span class="chip">GUI (Tkinter)</span></div>
-            <span class="project-link project-link--soon">Link in arrivo</span>
+            <span class="project-link project-link--soon" data-it="Link in arrivo" data-en="Link coming soon">Link in arrivo</span>
           </div>
         </div>
       </div>
@@ -498,16 +547,23 @@
     <section class="section philosophy" id="philosophy">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Filosofia del tennis</p>
-          <h2 class="section-title">Dove la disciplina incontra il codice</h2>
-          <p class="section-sub">Perché una racchetta e una tastiera non sono poi così diverse.</p>
+          <p class="eyebrow" data-it="Filosofia del tennis" data-en="Tennis philosophy">Filosofia del tennis</p>
+          <h2 class="section-title"
+              data-it="Dove la disciplina incontra il codice"
+              data-en="Where discipline meets code">Dove la disciplina incontra il codice</h2>
+          <p class="section-sub"
+             data-it="Perché una racchetta e una tastiera non sono poi così diverse."
+             data-en="Because a racket and a keyboard aren't that different.">Perché una racchetta e una tastiera non sono poi così diverse.</p>
         </div>
 
         <div class="philosophy-grid">
           <div class="philosophy-text reveal">
-            <p>Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla.</p>
-            <p>Entrambi puniscono l'impazienza. Un'approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
-            <p>È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento.</p>
+            <p data-it="Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla."
+               data-en="Tennis is a sport of repetition. You hit the same backhand thousands of times before it becomes reliable under pressure. Writing software isn't so different: the tenth version of a function is usually better than the first, and the only way to get there is to keep showing up and refining it.">Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla.</p>
+            <p data-it="Entrambi puniscono l'impazienza. Un'approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità."
+               data-en="Both punish impatience. A rushed approach ends in the net; a hastily written line of code turns into a 2am bug. What tennis taught me first, and every project since has confirmed, is that consistent, unglamorous practice beats talent that doesn't show up regularly.">Entrambi puniscono l'impazienza. Un'approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
+            <p data-it="È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento."
+               data-en="That's the standard I hold my work to: warm up properly, focus on fundamentals, and treat every setback — a lost set or a failing test — as information, not failure.">È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento.</p>
           </div>
 
           <div class="philosophy-quotes reveal">
@@ -520,8 +576,10 @@
               <cite>— Roger Federer</cite>
             </div>
             <div class="quote-card">
-              <p class="paraphrase">Roger Federer insegna a credere nel percorso e negli obiettivi futuri; Jannik Sinner dimostra che quel percorso si costruisce ogni giorno, attraverso lavoro, pazienza e attenzione ai dettagli.</p>
-              <cite>— Ispirato alla mentalità di Roger Federer e Jannik Sinner</cite>
+              <p class="paraphrase"
+                 data-it="Roger Federer insegna a credere nel percorso e negli obiettivi futuri; Jannik Sinner dimostra che quel percorso si costruisce ogni giorno, attraverso lavoro, pazienza e attenzione ai dettagli."
+                 data-en="Roger Federer teaches believing in the journey and future goals; Jannik Sinner shows that path is built day by day, through work, patience and attention to detail.">Roger Federer insegna a credere nel percorso e negli obiettivi futuri; Jannik Sinner dimostra che quel percorso si costruisce ogni giorno, attraverso lavoro, pazienza e attenzione ai dettagli.</p>
+              <cite data-it="— Ispirato alla mentalità di Roger Federer e Jannik Sinner" data-en="— Inspired by the mindset of Roger Federer and Jannik Sinner">— Ispirato alla mentalità di Roger Federer e Jannik Sinner</cite>
             </div>
           </div>
         </div>
@@ -532,9 +590,11 @@
     <section class="section section--surface" id="contact">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Match point</p>
-          <h2 class="section-title">Contattami</h2>
-          <p class="section-sub">Aperto a stage, tirocini e collaborazioni. Rispondo di solito entro un paio di giorni.</p>
+          <p class="eyebrow" data-it="Match point" data-en="Match point">Match point</p>
+          <h2 class="section-title" data-it="Contattami" data-en="Get in touch">Contattami</h2>
+          <p class="section-sub"
+             data-it="Aperto a stage, tirocini e collaborazioni. Rispondo di solito entro un paio di giorni."
+             data-en="Open to internships, placements and collaborations. I usually reply within a couple of days.">Aperto a stage, tirocini e collaborazioni. Rispondo di solito entro un paio di giorni.</p>
         </div>
 
         <div class="contact-grid contact-grid--solo">
@@ -550,7 +610,7 @@
               <div class="contact-info-item">
                 <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
                 <div>
-                  <h4>Posizione</h4>
+                  <h4 data-it="Posizione" data-en="Location">Posizione</h4>
                   <span class="val">Andria (BT), Puglia, Italia</span>
                 </div>
               </div>
@@ -578,19 +638,19 @@
         <div class="court-divider" aria-hidden="true">
           <svg viewBox="0 0 1200 28" preserveAspectRatio="none"><line x1="0" y1="14" x2="1200" y2="14" stroke-width="1.5"/><circle cx="600" cy="14" r="3" fill="rgba(250,248,242,0.3)" stroke="none"/></svg>
         </div>
-        <blockquote>"La vittoria appartiene ai più tenaci."</blockquote>
-        <cite>Incisione sopra il Court Philippe-Chatrier, Roland Garros</cite>
+        <blockquote data-it="&ldquo;La vittoria appartiene ai più tenaci.&rdquo;" data-en="&ldquo;Victory belongs to the most tenacious.&rdquo;">"La vittoria appartiene ai più tenaci."</blockquote>
+        <cite data-it="Incisione sopra il Court Philippe-Chatrier, Roland Garros" data-en="Inscription above Court Philippe-Chatrier, Roland Garros">Incisione sopra il Court Philippe-Chatrier, Roland Garros</cite>
       </div>
 
       <div class="footer-bottom">
-        <span>© <span id="year">2026</span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla.</span>
+        <span data-it="© <span id='year'>2026</span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla." data-en="© <span id='year'>2026</span> Nicola Guglielmi. Built with HTML, CSS &amp; vanilla JS.">© <span id="year">2026</span> Nicola Guglielmi. Realizzato con HTML, CSS e JS vanilla.</span>
         <div class="footer-socials">
           <a class="icon-btn" href="https://github.com/Nicoguglielmii" target="_blank" rel="noopener" aria-label="Profilo GitHub">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.1 3.29 9.41 7.86 10.94.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.2.7-3.88-1.36-3.88-1.36-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.34.96.1-.74.4-1.25.73-1.54-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.18-3.1-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.24 2.75.12 3.04.74.81 1.18 1.84 1.18 3.1 0 4.42-2.69 5.39-5.27 5.68.42.36.78 1.08.78 2.18 0 1.57-.02 2.84-.02 3.23 0 .3.21.66.79.55A10.52 10.52 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
           </a>
         </div>
         <button class="back-to-top" id="backToTop" type="button">
-          Torna su
+          <span data-it="Torna su" data-en="Back to top">Torna su</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
         </button>
       </div>
