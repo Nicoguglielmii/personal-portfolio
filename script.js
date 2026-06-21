@@ -193,4 +193,89 @@
   if (langITBtn) langITBtn.addEventListener('click', function () { applyLang('it'); });
   if (langENBtn) langENBtn.addEventListener('click', function () { applyLang('en'); });
 
+  /* ---------------------------- Reduced motion check ---------------------------- */
+  var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------------------------- Click ripple effect ---------------------------- */
+  if (!prefersReducedMotion) {
+    var rippleTargets = document.querySelectorAll('.btn, .icon-btn, .back-to-top');
+    rippleTargets.forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        var rect = el.getBoundingClientRect();
+        var size = Math.max(rect.width, rect.height) * 1.4;
+        var x = (e.clientX !== undefined ? e.clientX - rect.left : rect.width / 2) - size / 2;
+        var y = (e.clientY !== undefined ? e.clientY - rect.top : rect.height / 2) - size / 2;
+
+        var ripple = document.createElement('span');
+        ripple.className = 'ripple';
+        ripple.style.width = size + 'px';
+        ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+
+        el.appendChild(ripple);
+        ripple.addEventListener('animationend', function () {
+          ripple.remove();
+        });
+      });
+    });
+  }
+
+  /* ---------------------------- Score panel 3D tilt ---------------------------- */
+  var scorePanel = document.querySelector('.score-panel');
+  var canHover = window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (scorePanel && canHover && !prefersReducedMotion) {
+    scorePanel.addEventListener('mousemove', function (e) {
+      var rect = scorePanel.getBoundingClientRect();
+      var px = (e.clientX - rect.left) / rect.width - 0.5;
+      var py = (e.clientY - rect.top) / rect.height - 0.5;
+      var rotateY = px * 16;
+      var rotateX = py * -16;
+      scorePanel.style.transform =
+        'perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' + rotateY.toFixed(2) + 'deg) scale(1.02)';
+    });
+    scorePanel.addEventListener('mouseleave', function () {
+      scorePanel.style.transform = '';
+    });
+  }
+
+  /* ---------------------------- Stat number count-up ---------------------------- */
+  var statNumbers = document.querySelectorAll('.stat-number');
+  if (statNumbers.length && !prefersReducedMotion) {
+    var animateCount = function (el) {
+      var fullText = el.textContent.trim();
+      var match = fullText.match(/^(\d+)(.*)$/);
+      if (!match) return; // not a leading-number value (e.g. "B2") — leave as-is
+
+      var target = parseInt(match[1], 10);
+      var suffix = match[2] || '';
+      var duration = 900;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.round(eased * target);
+        el.textContent = current + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+        else el.textContent = target + suffix;
+      }
+      requestAnimationFrame(step);
+    };
+
+    if ('IntersectionObserver' in window) {
+      var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            statObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      statNumbers.forEach(function (el) { statObserver.observe(el); });
+    }
+  }
+
 })();

@@ -47,6 +47,9 @@ A section connecting sports mentality with programming discipline, featuring ide
 📱 **Responsive Design**
 Optimized for desktop, tablet, and mobile devices.
 
+✨ **Micro-interactions & Animations**
+Hover effects, click ripples, and a mouse-following 3D tilt on the hero player card, plus animated count-up numbers — all respecting the `prefers-reduced-motion` setting.
+
 ---
 
 ## Technologies
@@ -180,6 +183,9 @@ Uno spazio che collega la mentalità sportiva alla disciplina della programmazio
 
 📱 **Design Responsive**
 Ottimizzato per desktop, tablet e smartphone.
+
+✨ **Micro-interazioni e Animazioni**
+Effetti hover, ripple al click e un'inclinazione 3D che segue il mouse sulla scheda giocatore dell'hero, più numeri animati che "contano" — tutto nel rispetto dell'impostazione `prefers-reduced-motion`.
 
 ---
 
