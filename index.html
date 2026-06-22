@@ -15,7 +15,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -123,15 +123,11 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <p class="hero-eyebrow"><span class="dot" aria-hidden="true"></span>Andria, Italia</p>
-          <h1 data-it="Un punto<br><span class='accent'>alla volta.</span>" data-en="One point<br><span class='accent'>at a time.</span>">Un punto<br><span class="accent">alla volta.</span></h1>
+          <h1 id="heroH1">Un punto<br><span class="accent">alla volta.</span></h1>
 
-          <p class="hero-role"
-             data-it="Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class='accent'>leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte."
-             data-en="Nicola Guglielmi — I build software the same way I play a match: <span class='accent'>read the situation, execute</span>, and when it doesn't work, try again. Better, not harder.">Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class="accent">leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte.</p>
+          <p class="hero-role" id="heroRole">Nicola Guglielmi — costruisco software con lo stesso metodo con cui gioco un match: <span class="accent">leggo la situazione, eseguo</span>, e se non funziona riprovo. Meglio, non più forte.</p>
 
-          <p class="hero-lead"
-             data-it="Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno."
-             data-en="I'm 17 and based in Andria, Puglia. I split my days between the court and the keyboard — in both, results come from repetition, attention to detail, and the will to improve with every round.">Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno.</p>
+          <p class="hero-lead" id="heroLead">Ho 17 anni e vivo ad Andria, in Puglia. Divido le giornate tra il campo e la tastiera: in entrambi i casi il risultato arriva da ripetizione, attenzione ai dettagli e voglia di migliorare a ogni turno.</p>
 
           <div class="hero-cta">
             <a href="#projects" class="btn btn--primary" data-it="Guarda i mieimatch" data-en="See my matches">Guarda i miei match</a>
@@ -198,41 +194,69 @@
               <img src="assets/images/avatar-placeholder.svg" alt="Nicola Guglielmi" width="260" height="260" loading="lazy" decoding="async">
             </div>
             <!-- Quote badge changes with court -->
-            <div class="about-quote-badge">
+            <div class="about-quote-badge" id="aboutQuoteBadge" role="button" tabindex="0" aria-label="Svela la citazione">
+              <span class="about-quote-hint" id="aboutQuoteHint" data-it="— tappa per svelare —" data-en="— tap to reveal —">— tappa per svelare —</span>
               <blockquote id="aboutQuoteText">"If you can meet with Triumph and Disaster and treat those two impostors just the same"</blockquote>
               <cite id="aboutQuoteCite" data-it="Iscrizione nell'ingresso degli spogliatoi, Wimbledon" data-en="Inscription above the players' entrance, Wimbledon">Iscrizione nell'ingresso degli spogliatoi, Wimbledon</cite>
             </div>
           </div>
 
           <div class="about-text reveal">
-            <p class="eyebrow" data-it="Chi sono" data-en="About">Chi sono</p>
-            <h2 class="section-title"
-                data-it="Pazienza, ripetizione e un piano a lungo termine"
-                data-en="Patience, repetition and a long-term plan">Pazienza, ripetizione e un piano a lungo termine</h2>
+            <p class="eyebrow" id="aboutEyebrow">Chi sono</p>
+            <h2 class="section-title" id="aboutTitle">Pazienza, ripetizione e un piano a lungo termine</h2>
 
-            <p style="margin-top:1.4rem;"
-               data-it="Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, sviluppo web con HTML e CSS, architettura dei computer e reti informatiche."
-               data-en="I'm a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. My programme covers Python and Java, web development with HTML and CSS, computer architecture, and networking.">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
+            <p id="aboutP1" style="margin-top:1.4rem;">Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l'ITT Sen. O. Jannuzzi. Il mio percorso copre programmazione in Python e Java, sviluppo web con HTML e CSS, architettura dei computer e reti informatiche.</p>
 
-            <p data-it="Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare nuovi linguaggi e nel costruire cose che funzionano davvero — non solo in teoria."
-               data-en="Outside school, tennis is what truly taught me to follow through. A match isn't won with one perfect shot, but by showing up for the next rally, even after a mistake. I bring the same mindset to debugging, learning new languages, and building things that actually work — not just in theory.">Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare nuovi linguaggi e nel costruire cose che funzionano davvero — non solo in teoria.</p>
+            <p id="aboutP2">Fuori dalla scuola, il tennis è ciò che mi ha insegnato davvero a portare a termine le cose. Una partita non si vince con un colpo perfetto, ma presentandosi allo scambio successivo, anche dopo uno sbagliato. Porto la stessa mentalità nel debugging, nell'imparare nuovi linguaggi e nel costruire cose che funzionano davvero — non solo in teoria.</p>
 
             <div class="stat-row reveal-stagger reveal">
-              <div class="stat-card">
-                <div class="stat-number">4</div>
-                <div class="stat-label" data-it="Anni di studio IT" data-en="Years studying IT">Anni di studio IT</div>
+              <div class="stat-card" tabindex="0" role="button" aria-label="4 anni di studio IT">
+                <div class="stat-card-inner">
+                  <div class="stat-card-front">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label" data-it="Anni di studio IT" data-en="Years studying IT">Anni di studio IT</div>
+                  </div>
+                  <div class="stat-card-back" id="statBack0">
+                    <span class="stat-back-icon">📚</span>
+                    <span class="stat-back-text" data-it="Python, Java, C, reti — dal 2022 ad oggi" data-en="Python, Java, C, networking — since 2022">Python, Java, C, reti — dal 2022 ad oggi</span>
+                  </div>
+                </div>
               </div>
-              <div class="stat-card">
-                <div class="stat-number">8</div>
-                <div class="stat-label" data-it="Certificazioni" data-en="Certifications">Certificazioni</div>
+              <div class="stat-card" tabindex="0" role="button" aria-label="8 certificazioni">
+                <div class="stat-card-inner">
+                  <div class="stat-card-front">
+                    <div class="stat-number">8</div>
+                    <div class="stat-label" data-it="Certificazioni" data-en="Certifications">Certificazioni</div>
+                  </div>
+                  <div class="stat-card-back" id="statBack1">
+                    <span class="stat-back-icon">🏆</span>
+                    <span class="stat-back-text" data-it="Cisco, Cambridge, Python, SQL, AI e altro" data-en="Cisco, Cambridge, Python, SQL, AI and more">Cisco, Cambridge, Python, SQL, AI e altro</span>
+                  </div>
+                </div>
               </div>
-              <div class="stat-card">
-                <div class="stat-number">B2</div>
-                <div class="stat-label" data-it="Livello inglese" data-en="English level">Livello inglese</div>
+              <div class="stat-card" tabindex="0" role="button" aria-label="B2 Inglese">
+                <div class="stat-card-inner">
+                  <div class="stat-card-front">
+                    <div class="stat-number">B2</div>
+                    <div class="stat-label" data-it="Livello inglese" data-en="English level">Livello inglese</div>
+                  </div>
+                  <div class="stat-card-back" id="statBack2">
+                    <span class="stat-back-icon">🎓</span>
+                    <span class="stat-back-text" data-it="Cambridge B2 First — lettura, scrittura, orale" data-en="Cambridge B2 First — reading, writing, spoken">Cambridge B2 First — lettura, scrittura, orale</span>
+                  </div>
+                </div>
               </div>
-              <div class="stat-card">
-                <div class="stat-number">6/6</div>
-                <div class="stat-label" data-it="DigComp max" data-en="DigComp max">DigComp max</div>
+              <div class="stat-card" tabindex="0" role="button" aria-label="6/6 DigComp">
+                <div class="stat-card-inner">
+                  <div class="stat-card-front">
+                    <div class="stat-number">6/6</div>
+                    <div class="stat-label" data-it="DigComp max" data-en="DigComp max">DigComp max</div>
+                  </div>
+                  <div class="stat-card-back" id="statBack3">
+                    <span class="stat-back-icon">⚡</span>
+                    <span class="stat-back-text" data-it="Livello Avanzato in 4 aree su 5 — DigComp 2.1" data-en="Advanced level in 4 out of 5 areas — DigComp 2.1">Livello Avanzato in 4 aree su 5 — DigComp 2.1</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -356,7 +380,7 @@
         <div class="section-head reveal">
           <p class="eyebrow" data-it="Il segnapunti" data-en="The scoreboard">Il segnapunti</p>
           <h2 class="section-title" data-it="Stats" data-en="Stats">Stats</h2>
-          <p class="section-sub"
+          <p class="section-sub" id="skillsSub"
              data-it="Competenze autovalutate sui linguaggi e strumenti che uso, più una stima basata su DigComp 2.1."
              data-en="Self-assessed proficiency in languages and tools I use, plus a DigComp 2.1 digital competence estimate.">Competenze autovalutate sui linguaggi e strumenti che uso, più una stima basata su DigComp 2.1.</p>
         </div>
@@ -621,12 +645,9 @@
 
         <div class="philosophy-grid">
           <div class="philosophy-text reveal">
-            <p data-it="Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla."
-               data-en="Tennis is a sport of repetition. You hit the same backhand thousands of times before it becomes reliable under pressure. Writing software isn't so different: the tenth version of a function is usually better than the first, and the only way to get there is to keep showing up and refining it.">Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla.</p>
-            <p data-it="Entrambi puniscono l'impazienza. Un approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità."
-               data-en="Both punish impatience. A rushed approach ends in the net; a hastily written line of code turns into a 2am bug. What tennis taught me first, and every project since has confirmed, is that consistent, unglamorous practice beats talent that doesn't show up regularly.">Entrambi puniscono l'impazienza. Un approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
-            <p data-it="È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento."
-               data-en="That's the standard I hold my work to: warm up properly, focus on fundamentals, and treat every setback — a lost set or a failing test — as information, not failure.">È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento.</p>
+            <p id="philoTextP1">Il tennis è uno sport di ripetizione. Colpisci lo stesso rovescio migliaia di volte prima che diventi affidabile sotto pressione. Scrivere software non è poi così diverso: la decima versione di una funzione è di solito migliore della prima, e l'unico modo per arrivarci è continuare a presentarsi e a perfezionarla.</p>
+            <p id="philoTextP2">Entrambi puniscono l'impazienza. Un approccio affrettato finisce in rete; una riga di codice scritta di fretta finisce per diventare un bug alle due di notte. Quello che il tennis mi ha insegnato per primo, e che ogni progetto da allora ha confermato, è che una pratica costante e poco appariscente batte il talento che non si presenta con regolarità.</p>
+            <p id="philoTextP3">È lo standard a cui tengo il mio lavoro: scaldarsi bene, concentrarsi sui fondamentali e trattare ogni battuta d'arresto — un set perso o un test che fallisce — come un'informazione, non come un fallimento.</p>
           </div>
 
           <div class="philosophy-quotes reveal" id="philosophyQuotes">

@@ -32,6 +32,34 @@
       philoCite1: '\u2014 Jannik Sinner',
       philoQuote2: '\u201cYou have to believe in the long term plan you have but you need the short term goals to motivate and inspire you.\u201d',
       philoCite2: '\u2014 Roger Federer',
+
+      // ── Hero: erba veloce, eleganza britannica, un colpo netto
+      heroH1_it: 'Un punto<br><span class="accent">alla volta.</span>',
+      heroH1_en: 'One point<br><span class="accent">at a time.</span>',
+      heroRole_it: 'Nicola Guglielmi \u2014 sull\u2019erba vinci con <span class="accent">precisione e velocit\u00e0 di reazione</span>, non con la forza bruta. Costruisco software allo stesso modo: soluzioni pulite, eseguite bene al primo tentativo utile.',
+      heroRole_en: 'Nicola Guglielmi \u2014 on grass you win with <span class="accent">precision and quick reactions</span>, not brute force. I build software the same way: clean solutions, executed well on the first useful attempt.',
+      heroLead_it: 'Ho 17 anni, vengo da Andria, Puglia. Wimbledon insegna che la forma conta quanto il risultato: codice leggibile, architettura ordinata, nessuna soluzione che regge solo in allenamento.',
+      heroLead_en: 'I\u2019m 17, from Andria, Puglia. Wimbledon teaches that form matters as much as the result: readable code, clean architecture, no solutions that only hold up in practice.',
+
+      // ── About
+      aboutEyebrow_it: 'Chi sono',
+      aboutEyebrow_en: 'About',
+      aboutTitle_it: 'Precisione, velocit\u00e0 e un piano a lungo termine',
+      aboutTitle_en: 'Precision, speed and a long-term plan',
+      aboutP1_it: 'Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> presso l\u2019ITT Sen. O. Jannuzzi. Il percorso copre Python, Java, sviluppo web, architettura dei computer e reti \u2014 le fondamenta su cui costruire tutto il resto.',
+      aboutP1_en: 'I\u2019m a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. The programme covers Python, Java, web development, computer architecture and networking \u2014 the foundation everything else is built on.',
+      aboutP2_it: "Sull'erba devi leggere il rimbalzo prima che arrivi e rispondere in anticipo. \u00c8 la stessa competenza che alleno nel debugging e nel design di sistema: non aspettare che il problema esploda, anticiparlo con struttura chiara e codice che si spiega da solo. Il tennis di Wimbledon mi ha insegnato che la reattivit\u00e0 senza disciplina \u00e8 solo caos.",
+      aboutP2_en: "On grass you have to read the bounce before it comes and respond ahead of time. That's the same skill I train in debugging and system design: don't wait for the problem to explode, anticipate it with clear structure and self-documenting code. Wimbledon tennis taught me that reactivity without discipline is just chaos.",
+
+      // ── Philosophy text
+      philoTextP1_it: "L'erba \u00e8 la superficie pi\u00f9 rapida. Un rimbalzo basso, una finestra di risposta minima, zero margine di errore sui fondamentali. Chi vince a Wimbledon non \u00e8 necessariamente il pi\u00f9 potente: \u00e8 chi mantiene la testa fredda mentre tutto accelera intorno a lui. In un progetto software sotto scadenza funziona esattamente cos\u00ec.",
+      philoTextP1_en: "Grass is the fastest surface. A low bounce, a minimal response window, zero margin for error on fundamentals. Whoever wins at Wimbledon isn\u2019t necessarily the most powerful: it\u2019s whoever keeps a clear head while everything accelerates around them. In a software project under deadline, it works exactly the same way.",
+      philoTextP2_it: "Federer non inventava colpi a caso: ogni risposta era il prodotto di migliaia di ore di pratica deliberata, compresse in una frazione di secondo. Quella stessa logica guida il modo in cui mi avvicino a un nuovo linguaggio o a un sistema che non conosco \u2014 costruire i pattern corretti fin dall'inizio, prima che le cattive abitudini diventino automatiche.",
+      philoTextP2_en: "Federer didn\u2019t invent shots randomly: every response was the product of thousands of hours of deliberate practice, compressed into a fraction of a second. That same logic guides how I approach a new language or an unfamiliar system \u2014 build the right patterns from the start, before bad habits become automatic.",
+      philoTextP3_it: "La regola di Wimbledon che tengo in testa: trattare Trionfo e Disastro allo stesso modo. Una feature che funziona non \u00e8 un motivo per smettere di migliorare; un bug critico non \u00e8 una catastrofe ma un punto da giocare. Stessa energia, stessa concentrazione, qualunque sia il punteggio.",
+      philoTextP3_en: "The Wimbledon rule I keep in mind: treat Triumph and Disaster the same. A feature that works isn\u2019t a reason to stop improving; a critical bug isn\u2019t a catastrophe but a point to play. Same energy, same focus, whatever the score.",
+      skillsSub_it: "Competenze autovalutate \u2014 come le statistiche di un giocatore sul Centre Court. Ogni barra \u00e8 un dato, non una promessa.",
+      skillsSub_en: "Self-assessed skills \u2014 like a player\u2019s stats on Centre Court. Each bar is data, not a promise.",
     },
     rg: {
       name: 'Roland Garros',
@@ -52,6 +80,34 @@
       philoCite1: '\u2014 Carlos Alcaraz',
       philoQuote2: '\u201cThe day you stop running is the day you lose. There is no secret \u2014 just clay, sweat, and passion.\u201d',
       philoCite2: '\u2014 Rafael Nadal',
+
+      // ── Hero: terra lenta, resistenza, costruire il punto
+      heroH1_it: 'Costruire<br><span class="accent">lo scambio lungo.</span>',
+      heroH1_en: 'Build<br><span class="accent">the long rally.</span>',
+      heroRole_it: 'Nicola Guglielmi \u2014 sulla terra non esistono colpi facili: ogni punto si <span class="accent">costruisce scambio dopo scambio</span>, con pazienza e resistenza. Scrivo codice con la stessa mentalit\u00e0.',
+      heroRole_en: 'Nicola Guglielmi \u2014 on clay there are no easy points: every one is <span class="accent">built rally by rally</span>, with patience and endurance. I write code with the same mindset.',
+      heroLead_it: 'Ho 17 anni, vengo da Andria, Puglia. Roland Garros insegna che la velocit\u00e0 non basta: serve resistenza, pattern recognition e la capacit\u00e0 di rimanere nel punto quando sarebbe pi\u00f9 comodo uscirne.',
+      heroLead_en: 'I\u2019m 17, from Andria, Puglia. Roland Garros teaches that speed isn\u2019t enough: you need endurance, pattern recognition, and the ability to stay in the rally when leaving would be easier.',
+
+      // ── About
+      aboutEyebrow_it: 'Chi sono',
+      aboutEyebrow_en: 'About',
+      aboutTitle_it: 'Resistenza, pattern e un piano a lungo termine',
+      aboutTitle_en: 'Endurance, patterns and a long-term plan',
+      aboutP1_it: 'Sono uno <strong>studente di 17 anni</strong> di Andria, in Puglia, e sto completando il <strong>Diploma in Informatica e Telecomunicazioni</strong> all\u2019ITT Sen. O. Jannuzzi. Python, Java, reti, sistemi: ogni materia \u00e8 un set da vincere prima di passare al prossimo.',
+      aboutP1_en: 'I\u2019m a <strong>17-year-old student</strong> from Andria, Puglia, completing a <strong>Diploma in IT &amp; Telecommunications</strong> at ITT Sen. O. Jannuzzi. Python, Java, networking, systems: every subject is a set to win before moving to the next.',
+      aboutP2_it: "Sulla terra rossa non si pu\u00f2 vincere con un ace: bisogna costruire la pressione, punto per punto, finch\u00e9 l'avversario non commette l'errore. Nel codice vale lo stesso: non esiste la soluzione brillante arrivata in un lampo. Esiste la soluzione costruita commit dopo commit, refactor dopo refactor, finch\u00e9 il sistema regge davvero sotto carico.",
+      aboutP2_en: "On clay you can\u2019t win with an ace: you have to build the pressure, point by point, until the opponent makes the error. In code it\u2019s the same: there is no brilliant solution that arrives in a flash. There is the solution built commit by commit, refactor by refactor, until the system actually holds under load.",
+
+      // ── Philosophy text
+      philoTextP1_it: "Roland Garros \u00e8 il torneo pi\u00f9 lento e pi\u00f9 impietoso del circuito. La terra assorbe la potenza, rallenta i colpi, e premia chi ha la testa dura abbastanza da restare nello scambio quando sarebbe pi\u00f9 facile venire a rete. I bug pi\u00f9 ostici in un progetto complesso funzionano esattamente cos\u00ec: emergono lentamente, dopo ore di lavoro apparentemente inutile.",
+      philoTextP1_en: "Roland Garros is the slowest and most unforgiving tournament on the circuit. Clay absorbs power, slows shots down, and rewards whoever is stubborn enough to stay in the rally when going to the net would be easier. The toughest bugs in a complex project work exactly the same way: they surface slowly, after hours of seemingly wasted work.",
+      philoTextP2_it: "Nadal non vinceva lo scambio con un colpo solo: costruiva l\u2019angolo con cinque, sei, sette dritti in fila, spostando l\u2019avversario millimetro dopo millimetro finch\u00e9 lo spazio aperto diventava inevitabile. Una codebase solida si costruisce allo stesso modo: nessun singolo commit la risolve, ma ogni piccolo miglioramento sposta l\u2019equilibrio nella direzione giusta.",
+      philoTextP2_en: "Nadal didn\u2019t win the rally with a single shot: he built the angle with five, six, seven forehands in a row, moving the opponent millimetre by millimetre until the open space became inevitable. A solid codebase is built the same way: no single commit fixes it, but every small improvement shifts the balance in the right direction.",
+      philoTextP3_it: "Lo standard che tengo: non cercare la soluzione brillante, cercare la soluzione che regge. Scaldarsi bene, coprire i fondamentali, trattare ogni bug come un punto da giocare \u2014 non come un fallimento da nascondere. La terra rossa punisce chi si ferma; il codice fa lo stesso.",
+      philoTextP3_en: "The standard I hold: don\u2019t look for the brilliant solution, look for the solution that holds. Warm up properly, cover the fundamentals, treat every bug as a point to play \u2014 not a failure to hide. Clay punishes whoever stops; code does the same.",
+      skillsSub_it: "Competenze costruite rally dopo rally \u2014 nessuna scorciatoia, solo ripetizione. Il punteggio riflette il lavoro fatto, non l\u2019obiettivo futuro.",
+      skillsSub_en: "Skills built rally by rally \u2014 no shortcuts, only repetition. The score reflects the work done, not the future goal.",
     }
   };
 
@@ -91,6 +147,25 @@
   var footerQuoteCite = document.getElementById('footerQuoteCite');
   var footerImg       = document.getElementById('footerImg');
 
+  // Hero dynamic elements
+  var heroH1   = document.getElementById('heroH1');
+  var heroRole = document.getElementById('heroRole');
+  var heroLead = document.getElementById('heroLead');
+
+  // About section dynamic elements
+  var aboutEyebrow = document.getElementById('aboutEyebrow');
+  var aboutTitle   = document.getElementById('aboutTitle');
+  var aboutP1      = document.getElementById('aboutP1');
+  var aboutP2      = document.getElementById('aboutP2');
+
+  // Philosophy text paragraphs
+  var philoTextP1  = document.getElementById('philoTextP1');
+  var philoTextP2  = document.getElementById('philoTextP2');
+  var philoTextP3  = document.getElementById('philoTextP3');
+
+  // Skills subtitle
+  var skillsSub    = document.getElementById('skillsSub');
+
   /* ─── Helpers ─────────────────────────────────────────────────── */
   function store(key, val) { try { localStorage.setItem(key, val); } catch(e) {} }
   function recall(key)      { try { return localStorage.getItem(key); } catch(e) { return null; } }
@@ -123,12 +198,14 @@
   /* ─── Court (Wimbledon / Roland Garros) ───────────────────────── */
   var currentCourt = recall(COURT_KEY) || 'wimbledon';
   var prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // currentLang initialized early so applyCourt can read it without depending on localStorage timing
+  var currentLang = (function() { var s = recall(LANG_KEY); return (s === 'it' || s === 'en') ? s : 'it'; }());
 
   function applyCourt(court, animate) {
     var data = COURTS[court];
     if (!data) return;
 
-    var lang = getLang();
+    var lang = currentLang;
 
     // CSS data-court attribute
     if (court === 'rg') root.setAttribute('data-court', 'rg');
@@ -180,6 +257,29 @@
 
     // Footer image
     if (footerImg) footerImg.src = data.footerImg;
+
+    // Hero dynamic text
+    if (heroH1)   heroH1.innerHTML   = lang === 'en' ? data.heroH1_en   : data.heroH1_it;
+    if (heroRole) heroRole.innerHTML  = lang === 'en' ? data.heroRole_en : data.heroRole_it;
+    if (heroLead) heroLead.innerHTML  = lang === 'en' ? data.heroLead_en : data.heroLead_it;
+
+    // About section dynamic text
+    if (aboutEyebrow) aboutEyebrow.textContent = lang === 'en' ? data.aboutEyebrow_en : data.aboutEyebrow_it;
+    if (aboutTitle)   aboutTitle.textContent   = lang === 'en' ? data.aboutTitle_en   : data.aboutTitle_it;
+    if (aboutP1)      aboutP1.innerHTML        = lang === 'en' ? data.aboutP1_en      : data.aboutP1_it;
+    if (aboutP2)      aboutP2.innerHTML        = lang === 'en' ? data.aboutP2_en      : data.aboutP2_it;
+
+    // Philosophy text paragraphs
+    if (philoTextP1) philoTextP1.innerHTML = lang === 'en' ? data.philoTextP1_en : data.philoTextP1_it;
+    if (philoTextP2) philoTextP2.innerHTML = lang === 'en' ? data.philoTextP2_en : data.philoTextP2_it;
+    if (philoTextP3) philoTextP3.innerHTML = lang === 'en' ? data.philoTextP3_en : data.philoTextP3_it;
+
+    // Skills subtitle (different per court)
+    if (skillsSub && data.skillsSub_it) {
+      skillsSub.setAttribute('data-it', data.skillsSub_it);
+      skillsSub.setAttribute('data-en', data.skillsSub_en);
+      skillsSub.textContent = lang === 'en' ? data.skillsSub_en : data.skillsSub_it;
+    }
 
     store(COURT_KEY, court);
     currentCourt = court;
@@ -233,12 +333,13 @@
   }
 
   function getLang() {
-    var stored = recall(LANG_KEY);
-    if (stored === 'it' || stored === 'en') return stored;
-    return 'it';
+    return currentLang;
   }
 
   function applyLang(lang) {
+    currentLang = lang;
+    store(LANG_KEY, lang);
+
     document.querySelectorAll('[data-it][data-en]').forEach(function (el) {
       var text = el.getAttribute('data-' + lang);
       if (text !== null) el.innerHTML = text;
@@ -258,9 +359,8 @@
     if (langITBtn) { langITBtn.classList.toggle('is-active', lang === 'it'); langITBtn.setAttribute('aria-pressed', String(lang === 'it')); }
     if (langENBtn) { langENBtn.classList.toggle('is-active', lang === 'en'); langENBtn.setAttribute('aria-pressed', String(lang === 'en')); }
 
-    // Re-apply court strings in new language
+    // Re-apply court strings in the new language (now currentLang is already updated)
     applyCourt(currentCourt, false);
-    store(LANG_KEY, lang);
   }
 
   applyLang(getLang());
@@ -349,11 +449,17 @@
   }
 
   /* ─── Centre Court + Score Animation ─────────────────────────── */
-  var CC_SCORES = ['15 – 0', '30 – 0', '40 – 0', 'Game · Set · Match'];
+  var CC_SCORES_WIMBLEDON = ['15 – 0', '30 – 0', '40 – 0', 'Game · Set · Match'];
+  var CC_SCORES_RG        = ['15 – 0', '30 – 0', '40 – 0', 'Jeu-set-match'];
+
+  function getCcScores() {
+    return currentCourt === 'rg' ? CC_SCORES_RG : CC_SCORES_WIMBLEDON;
+  }
 
   function showCcCall(idx) {
     if (!ccCall) return;
-    var text = CC_SCORES[idx] !== undefined ? CC_SCORES[idx] : CC_SCORES[CC_SCORES.length - 1];
+    var scores = getCcScores();
+    var text = scores[idx] !== undefined ? scores[idx] : scores[scores.length - 1];
     ccCall.classList.remove('is-visible');
     void ccCall.offsetWidth; // reflow, so the fade-in retriggers every click
     ccCall.textContent = text;
@@ -372,7 +478,7 @@
         var y = entry.getAttribute('data-pos-y');
         if (x && y) { ccBall.style.left = x + '%'; ccBall.style.top = y + '%'; }
 
-        // Score call: 1st card → 15-0, 2nd → 30-0, 3rd → 40-0, 4th → Game · Set · Match
+        // Score call: 1st card → 15-0, 2nd → 30-0, 3rd → 40-0, 4th → Game · Set · Match / Jeu-set-match
         showCcCall(idx);
       });
     });
@@ -383,6 +489,105 @@
       if (entry.classList.contains('is-active')) initialActiveIdx = idx;
     });
     showCcCall(initialActiveIdx);
+  }
+
+  /* ─── Stat cards flip ─────────────────────────────────────────── */
+  document.querySelectorAll('.stat-card').forEach(function(card) {
+    function toggle() {
+      card.classList.toggle('is-flipped');
+    }
+    card.addEventListener('click', toggle);
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+    });
+  });
+
+  /* ─── Stat back text update on court switch ───────────────────── */
+  var STAT_BACK_TEXTS = {
+    wimbledon: {
+      it: [
+        'Python, Java, C, reti — dal 2022 ad oggi',
+        'Cisco, Cambridge, Python, SQL, AI e altro',
+        'Cambridge B2 First — lettura, scrittura, orale',
+        'Livello Avanzato in 4 aree su 5 — DigComp 2.1'
+      ],
+      en: [
+        'Python, Java, C, networking — since 2022',
+        'Cisco, Cambridge, Python, SQL, AI and more',
+        'Cambridge B2 First — reading, writing, spoken',
+        'Advanced level in 4 out of 5 areas — DigComp 2.1'
+      ],
+      icons: ['📚', '🏆', '🎓', '⚡']
+    },
+    rg: {
+      it: [
+        'Quattro anni di scambio lungo — commit dopo commit',
+        'Otto trofei guadagnati con costanza, non con il talento',
+        'B2: la lingua che permette di restare nello scambio',
+        'Competenza digitale massima — costruita punto per punto'
+      ],
+      en: [
+        'Four years of long rallies — commit by commit',
+        'Eight trophies earned through consistency, not talent',
+        'B2: the language that keeps you in the rally',
+        'Max digital competence — built point by point'
+      ],
+      icons: ['🎯', '🏺', '💬', '🔥']
+    }
+  };
+
+  function updateStatBackTexts(court, lang) {
+    var data = STAT_BACK_TEXTS[court] || STAT_BACK_TEXTS.wimbledon;
+    document.querySelectorAll('.stat-card').forEach(function(card, idx) {
+      var iconEl = card.querySelector('.stat-back-icon');
+      var textEl = card.querySelector('.stat-back-text');
+      if (iconEl && data.icons[idx]) iconEl.textContent = data.icons[idx];
+      if (textEl) {
+        textEl.textContent = lang === 'en' ? data.en[idx] : data.it[idx];
+        textEl.setAttribute('data-it', data.it[idx]);
+        textEl.setAttribute('data-en', data.en[idx]);
+      }
+      // Reset flip on court switch
+      card.classList.remove('is-flipped');
+    });
+  }
+
+  /* ─── About quote badge interactive reveal ────────────────────── */
+  var aboutQuoteBadge = document.getElementById('aboutQuoteBadge');
+  var aboutQuoteHint  = document.getElementById('aboutQuoteHint');
+  if (aboutQuoteBadge) {
+    function revealQuoteBadge() {
+      aboutQuoteBadge.classList.toggle('is-revealed');
+    }
+    aboutQuoteBadge.addEventListener('click', revealQuoteBadge);
+    aboutQuoteBadge.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); revealQuoteBadge(); }
+    });
+  }
+
+  /* ─── Patch applyCourt to also update stat backs and reset quote ─ */
+  // updateStatBackTexts is called by the patched courtSwitch handler below
+  // and on initial load — we hook into the existing applyCourt via the
+  // courtSwitch click and lang change handlers.
+
+  // Initial stat back texts
+  updateStatBackTexts(currentCourt, currentLang);
+
+  // Re-run on court switch (after applyCourt updates currentCourt)
+  if (courtSwitch) {
+    courtSwitch.addEventListener('click', function () {
+      setTimeout(function() {
+        updateStatBackTexts(currentCourt, currentLang);
+        if (aboutQuoteBadge) aboutQuoteBadge.classList.remove('is-revealed');
+        if (aboutQuoteHint) {
+          aboutQuoteHint.textContent = currentLang === 'en' ? '— tap to reveal —' : '— tappa per svelare —';
+        }
+        // Refresh score call for current active card
+        var activeIdx = 0;
+        ccEntries.forEach(function(e, i) { if (e.classList.contains('is-active')) activeIdx = i; });
+        showCcCall(activeIdx);
+      }, 0);
+    });
   }
 
   /* ─── Score Strip scrollspy ───────────────────────────────────── */
