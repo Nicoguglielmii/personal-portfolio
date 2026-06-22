@@ -713,7 +713,8 @@ button:focus-visible {
 .nav-open .icon-close { display: block; }
 
 @media (max-width: 860px) {
-  .menu-toggle { display: inline-flex; }
+  /* Hide hamburger — navigation lives in the score strip below */
+  .menu-toggle { display: none !important; }
   .nav-links {
     position: fixed;
     inset: calc(var(--nav-h) + var(--strip-h)) 0 0 0;
@@ -726,14 +727,16 @@ button:focus-visible {
     transition: transform 280ms cubic-bezier(0.22,1,0.36,1);
     border-top: 1px solid var(--line);
     overflow-y: auto;
-    z-index: 197;   /* below strip (199) and navbar (200), above page */
+    z-index: 197;
     -webkit-overflow-scrolling: touch;
   }
   .nav-open .nav-links { transform: none; }
   .nav-links a { font-size: 1rem; padding: 0.7rem 0; width: 100%; border-bottom: 1px solid var(--line); }
   .nav-links a:last-child { border-bottom: none; }
-  .court-switch .cs-label { display: none; }
-  .court-switch { padding: 0.4rem 0.6rem; min-width: 32px; justify-content: center; }
+
+  /* Show the court label on mobile so the button is self-explanatory */
+  .court-switch .cs-label { display: inline; }
+  .court-switch { padding: 0.4rem 0.75rem; }
 }
 
 @media (max-width: 480px) {
@@ -746,9 +749,9 @@ button:focus-visible {
   .brand-mark { width: 24px; height: 24px; font-size: 0.6rem; flex-shrink: 0; }
   .lang-toggle button { padding: 0.22rem 0.4rem; font-size: 0.68rem; }
   .nav-actions { gap: 0.25rem; flex-shrink: 0; }
-  /* Court switch: only ball, no label */
-  .court-switch .cs-label { display: none; }
-  .court-switch { padding: 0.35rem 0.5rem; min-width: 28px; }
+  /* Keep label visible but compact */
+  .court-switch { padding: 0.35rem 0.6rem; }
+  .court-switch .cs-label { font-size: 0.72rem; }
 }
 
 /* Extra small: hide brand text, keep mark only */
@@ -1432,32 +1435,50 @@ button:focus-visible {
 }
 
 @media (max-width: 700px) {
+  /* Keep side-by-side: narrow court column + cards column */
   .cc-wrap {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 110px 1fr;
+    gap: 1rem;
+    align-items: start;
   }
-  /* On mobile: court is a compact horizontal strip above the cards */
+
+  /* Court stays vertical, just narrower */
   .cc-field {
-    aspect-ratio: unset;
-    height: 160px;
-    max-height: 160px;
+    aspect-ratio: 9 / 16;
+    height: auto;
+    max-height: none;
     border-radius: var(--radius-md);
   }
-  /* Reorder: entries first (more useful), court strip below */
-  .cc-field { order: 2; }
-  .cc-entries { order: 1; }
 
-  /* Score call bigger so it's readable in the short strip */
+  /* Reset any order changes */
+  .cc-field   { order: 0; }
+  .cc-entries { order: 0; }
+
+  /* Score call: smaller to fit narrow court */
   .cc-call {
-    font-size: 0.65rem;
-    padding: 0.2rem 0.7rem;
-    letter-spacing: 0.1em;
+    font-size: 0.52rem;
+    padding: 0.18rem 0.5rem;
+    letter-spacing: 0.08em;
+    bottom: 0.5rem;
   }
 
-  /* Entry cards: slightly more compact */
-  .cc-entry { padding: 0.75rem 0.9rem; }
-  .cc-entry h3 { font-size: 0.82rem; padding-right: 3rem; }
-  .cc-entry .org { font-size: 0.7rem; }
+  /* Ball slightly smaller */
+  .cc-ball { width: 12px; height: 12px; }
+
+  /* Entry cards: compact for small screens */
+  .cc-entries { gap: 0.5rem; }
+  .cc-entry { padding: 0.6rem 0.75rem; }
+  .cc-entry-period { font-size: 0.62rem; margin-bottom: 0.2rem; }
+  .cc-entry h3 { font-size: 0.75rem; padding-right: 0; line-height: 1.35; }
+  .cc-entry .org { font-size: 0.65rem; margin-top: 0.1rem; }
+  /* Hide score badge on tiny screens to save space */
+  .cc-score-badge { display: none; }
+}
+
+@media (max-width: 380px) {
+  .cc-wrap { grid-template-columns: 90px 1fr; gap: 0.75rem; }
+  .cc-entry { padding: 0.5rem 0.6rem; }
+  .cc-entry h3 { font-size: 0.7rem; }
 }
 
 /* ─── EDUCATION DRAW ────────────────────────────────────────────── */
