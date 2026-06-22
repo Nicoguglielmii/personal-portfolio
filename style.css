@@ -726,7 +726,8 @@ button:focus-visible {
     transition: transform 280ms cubic-bezier(0.22,1,0.36,1);
     border-top: 1px solid var(--line);
     overflow-y: auto;
-    z-index: 198;
+    z-index: 197;   /* below strip (199) and navbar (200), above page */
+    -webkit-overflow-scrolling: touch;
   }
   .nav-open .nav-links { transform: none; }
   .nav-links a { font-size: 1rem; padding: 0.7rem 0; width: 100%; border-bottom: 1px solid var(--line); }
@@ -736,11 +737,25 @@ button:focus-visible {
 }
 
 @media (max-width: 480px) {
-  .navbar .container { gap: 0.75rem; }
-  .brand { font-size: 0.78rem; }
-  .brand-mark { width: 26px; height: 26px; font-size: 0.64rem; }
-  .lang-toggle button { padding: 0.25rem 0.45rem; }
-  .nav-actions { gap: 0.3rem; }
+  .navbar .container {
+    gap: 0.5rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+  .brand { font-size: 0.75rem; gap: 0.45rem; }
+  .brand-mark { width: 24px; height: 24px; font-size: 0.6rem; flex-shrink: 0; }
+  .lang-toggle button { padding: 0.22rem 0.4rem; font-size: 0.68rem; }
+  .nav-actions { gap: 0.25rem; flex-shrink: 0; }
+  /* Court switch: only ball, no label */
+  .court-switch .cs-label { display: none; }
+  .court-switch { padding: 0.35rem 0.5rem; min-width: 28px; }
+}
+
+/* Extra small: hide brand text, keep mark only */
+@media (max-width: 360px) {
+  .brand span:not(.brand-mark) { display: none; }
+  .brand { gap: 0; }
+  .navbar .container { gap: 0.4rem; }
 }
 
 /* ─── SCORE STRIP ─────────────────────────────────────────────────── */
@@ -1417,8 +1432,32 @@ button:focus-visible {
 }
 
 @media (max-width: 700px) {
-  .cc-wrap { grid-template-columns: 1fr; }
-  .cc-field { aspect-ratio: 16/9; max-height: 220px; }
+  .cc-wrap {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  /* On mobile: court is a compact horizontal strip above the cards */
+  .cc-field {
+    aspect-ratio: unset;
+    height: 160px;
+    max-height: 160px;
+    border-radius: var(--radius-md);
+  }
+  /* Reorder: entries first (more useful), court strip below */
+  .cc-field { order: 2; }
+  .cc-entries { order: 1; }
+
+  /* Score call bigger so it's readable in the short strip */
+  .cc-call {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.7rem;
+    letter-spacing: 0.1em;
+  }
+
+  /* Entry cards: slightly more compact */
+  .cc-entry { padding: 0.75rem 0.9rem; }
+  .cc-entry h3 { font-size: 0.82rem; padding-right: 3rem; }
+  .cc-entry .org { font-size: 0.7rem; }
 }
 
 /* ─── EDUCATION DRAW ────────────────────────────────────────────── */
