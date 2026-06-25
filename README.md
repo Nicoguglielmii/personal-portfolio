@@ -1,286 +1,202 @@
-🇬🇧 **English** | 🇮🇹 **Italiano**
+# Nicola Guglielmi — Personal Portfolio
 
-* [English](#-english)
-* [Italiano](#-italiano)
+> *"Un punto alla volta." / "One point at a time."*
 
-# Nicola Guglielmi — Personal Portfolio 🎾
-
-> A personal portfolio website built around the idea of discipline, consistency, and continuous improvement — the same mindset that connects tennis and software development.
->
-> Un portfolio personale costruito attorno ai valori della disciplina, della costanza e del miglioramento continuo — la stessa mentalità che unisce il tennis e lo sviluppo software.
-
-🔗 **Live Website:** https://nicoguglielmii.github.io/personal-portfolio/
+**Live →** [nicoguglielmii.github.io/personal-portfolio](https://nicoguglielmii.github.io/personal-portfolio/)
 
 ---
 
-# 🇬🇧 English
+## 🇮🇹 Italiano
 
-## About
+### Panoramica
 
-Hi, I'm **Nicola Guglielmi**, an IT & Telecommunications student from **Andria, Italy**.
+Portfolio personale di **Nicola Guglielmi**, studente di Informatica e Telecomunicazioni da Andria (BT), Puglia. Il sito è costruito interamente in HTML, CSS e JavaScript vanilla — zero dipendenze, zero build step — e si ispira alla filosofia del tennis agonistico: disciplina, ripetizione e nessuna scorciatoia.
 
-This portfolio represents my journey into software development, combining my passion for technology with the values I learned through tennis: patience, repetition, and long-term growth.
+### Caratteristiche principali
 
-The design takes inspiration from the elegance of a tennis Centre Court, with a minimal aesthetic based on:
+| Funzionalità | Descrizione |
+|---|---|
+| **Dual Court System** | Due temi selezionabili: Wimbledon (verde, erba, eleganza britannica) e Roland Garros (rosso terra, densità, tenacia). Il tema persiste tra sessioni via `localStorage`. |
+| **Bilingue IT / EN** | Ogni testo del sito è disponibile in italiano e inglese. La lingua si cambia con un click e persiste via `localStorage`. |
+| **Stat card interattive** | Le quattro statistiche nella sezione "Chi sono" si girano (flip 3D) al click, rivelando un dettaglio diverso per ogni tema di campo. |
+| **Quote badge rivelabile** | La citazione nel profilo è nascosta e si svela al tap — ogni campo ha la propria citazione distintiva. |
+| **Score call dinamica** | Nella sezione Ranking, l'ultima card mostra *"Game · Set · Match"* su Wimbledon e *"Jeu-set-match"* su Roland Garros. |
+| **Campo tennis interattivo** | Selezionando una tappa del percorso, la pallina si sposta sul campo SVG e aggiorna il punteggio. |
+| **Score Strip** | Barra di navigazione fissa che mostra l'avanzamento nella pagina come un set in corso. |
+| **Scroll reveal** | Animazioni di entrata al scroll basate su `IntersectionObserver`. |
+| **Ottimizzato per mobile** | Layout responsive su tutti i breakpoint. Navbar e campo tennis adattati per schermi piccoli (≥ 320px). |
 
-* Wimbledon-inspired green tones
-* chalk and court-line details
-* scoreboard-style components
-* a focus on precision and simplicity
+### Struttura del progetto
 
----
-
-## Features
-
-🏟️ **Centre Court Experience Section**
-An interactive timeline where experiences are represented as points on a tennis court.
-
-🌗 **Dark / Light Mode**
-A custom theme system with saved user preferences.
-
-📊 **Skills Scoreboard**
-Animated skill indicators inspired by tennis statistics.
-
-🎾 **Tennis Philosophy Section**
-A section connecting sports mentality with programming discipline, featuring ideas from champions such as Roger Federer and Jannik Sinner.
-
-📱 **Responsive Design**
-Optimized for desktop, tablet, and mobile devices.
-
-✨ **Micro-interactions & Animations**
-Hover effects, click ripples, and a mouse-following 3D tilt on the hero player card, plus animated count-up numbers — all respecting the `prefers-reduced-motion` setting.
-
----
-
-## Technologies
-
-Built from scratch using:
-
-* **HTML5** — semantic structure and SEO metadata
-* **CSS3** — custom design system, variables, animations, Grid and Flexbox
-* **JavaScript (Vanilla)** — interactions, theme switching, and animations
-
-No frameworks.
-No dependencies.
-Just clean frontend code.
-
----
-
-## Project Structure
-
-```text
+```
 personal-portfolio/
-│
-├── index.html        # Main website structure
-├── style.css         # Design system and styling
-├── script.js         # Interactive features
-│
+├── index.html          ← struttura e contenuto
+├── style.css           ← sistema di design, temi, responsive
+├── script.js           ← logica interattiva, dual court, lingua
 ├── assets/
-│   ├── images/       # Images and visual assets
-│   └── icons/        # Website icons
-│
-└── README.md
+│   ├── images/
+│   │   ├── avatar-placeholder.svg
+│   │   ├── wimbledon.jpg
+│   │   └── roland-garros.jpg
+│   └── icons/
+│       └── favicon.svg
+└── Nicola-Guglielmi-CV.pdf
 ```
 
----
+### Sistema Dual Court
 
-## Run Locally
+Il cambio tema è gestito dall'attributo `data-court="rg"` sull'elemento `<html>`. Tutti gli stili Roland Garros sono override in `[data-court='rg'] { ... }`.
 
-Clone the repository:
+| | Wimbledon | Roland Garros |
+|---|---|---|
+| **Palette** | Crema `#F6F4EC` / Verde `#0E5C2D` | Blu notte `#1C2A40` / Rosso terra `#C24E2B` |
+| **Font display** | Fraunces (serif ottico) | Space Mono (monospace) |
+| **Font body** | Inter (sans-serif) | EB Garamond (serif classico) |
+| **Card style** | Bordi sottili, angoli netti, ombra silenziosa | Bordi 2px, angoli arrotondati, ombra offset 4–6px |
+| **Velocità transizioni** | 150ms (erba = scatto) | 280ms (terra = costruzione) |
+| **Score finale** | Game · Set · Match | Jeu-set-match |
+| **Hero text** | Precisione, velocità, reattività | Resistenza, costruzione, perseveranza |
+
+### Sistema di lingua
+
+Ogni elemento con attributi `data-it` / `data-en` viene aggiornato automaticamente al cambio lingua da `applyLang()`. I testi dinamici (Hero, Chi sono, Filosofia, Stats, back delle stat card) vengono iniettati da `applyCourt()` tramite l'oggetto `COURTS` in `script.js`.
+
+### Sezioni
+
+| Ancora | Metafora | Contenuto |
+|---|---|---|
+| `#hero` | Ingresso in campo | H1 + ruolo + player card |
+| `#about` | Profilo atleta | Bio + stat card interattive + quote badge |
+| `#experience` | Ranking / Centre Court | Campo SVG con pallina + tappe del percorso |
+| `#education` | Tabellone del torneo | Timeline accademica |
+| `#skills` | Scoreboard | Skill bar + DigComp + lingue |
+| `#certifications` | Bacheca trofei | 8 certificazioni Cisco/Cambridge/altro |
+| `#projects` | Match | 3 progetti con case study |
+| `#philosophy` | Filosofia | Testo + citazioni tennistiche |
+| `#contact` | Match Point | Email + GitHub + CV |
+
+### Font caricati
+
+```
+Fraunces     — display Wimbledon (serif ottico variabile, opsz 9–144)
+EB Garamond  — body Roland Garros (serif classico, italic nativo)
+Inter        — body Wimbledon (sans-serif di sistema)
+Space Mono   — display Roland Garros + elementi mono (score, chip, meta)
+```
+
+### Deploy
 
 ```bash
-git clone https://github.com/Nicoguglielmii/personal-portfolio.git
+git add .
+git commit -m "update"
+git push
 ```
 
-Open the project folder:
+GitHub Pages pubblica automaticamente dal branch `main`. Nessun build step richiesto.
 
-```bash
-cd personal-portfolio
+---
+
+## 🇬🇧 English
+
+### Overview
+
+Personal portfolio of **Nicola Guglielmi**, an IT & Telecommunications student from Andria (BT), Puglia, Italy. Built entirely in HTML, CSS and vanilla JavaScript — zero dependencies, zero build step — inspired by the philosophy of competitive tennis: discipline, repetition, no shortcuts.
+
+### Key Features
+
+| Feature | Description |
+|---|---|
+| **Dual Court System** | Two selectable themes: Wimbledon (green, grass, British elegance) and Roland Garros (clay red, density, tenacity). Theme persists between sessions via `localStorage`. |
+| **Bilingual IT / EN** | Every text on the site is available in Italian and English. Language switches on click and persists via `localStorage`. |
+| **Interactive stat cards** | The four statistics in the "About" section flip (3D) on click, revealing different detail text per court theme. |
+| **Revealable quote badge** | The quote in the profile is hidden and reveals on tap — each court has its own distinctive quote. |
+| **Dynamic score call** | In the Ranking section, the last card shows *"Game · Set · Match"* on Wimbledon and *"Jeu-set-match"* on Roland Garros. |
+| **Interactive tennis court** | Selecting a milestone moves the ball on the SVG court and updates the score. |
+| **Score Strip** | Fixed navigation bar showing page progress like a live set score. |
+| **Scroll reveal** | `IntersectionObserver`-based entrance animations on scroll. |
+| **Mobile optimised** | Responsive layout across all breakpoints. Navbar and tennis court adapted for small screens (≥ 320px). |
+
+### Project Structure
+
 ```
-
-Run it locally:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
-
-```text
-http://localhost:8000
-```
-
----
-
-## Deployment
-
-The website is deployed with **GitHub Pages**.
-
-Every update pushed to the `main` branch is automatically published online.
-
----
-
-## Philosophy
-
-> "The work never stops."
-> — Jannik Sinner
-
-> "You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."
-> — Roger Federer
-
-This portfolio follows the same principle:
-
-**build consistently, improve every day, and trust the process.**
-
----
-
-## Author
-
-**Nicola Guglielmi**
-
-IT & Telecommunications Student
-Andria, Italy
-
-* GitHub: https://github.com/Nicoguglielmii
-* Portfolio: https://nicoguglielmii.github.io/personal-portfolio/
-
----
-
-*"Victory belongs to the most tenacious."*
-
----
-
-# 🇮🇹 Italiano
-
-## Chi sono
-
-Ciao, sono **Nicola Guglielmi**, studente di Informatica e Telecomunicazioni di **Andria, Italia**.
-
-Questo portfolio rappresenta il mio percorso nello sviluppo software, unendo la passione per la tecnologia ai valori che ho imparato attraverso il tennis: pazienza, ripetizione e crescita nel lungo periodo.
-
-Il design si ispira all'eleganza di un Campo Centrale di tennis, con un'estetica minimale basata su:
-
-* tonalità verdi ispirate a Wimbledon
-* dettagli che richiamano il gesso e le linee del campo
-* componenti in stile tabellone segnapunti
-* attenzione alla precisione e alla semplicità
-
----
-
-## Caratteristiche
-
-🏟️ **Sezione Esperienze "Centre Court"**
-Una timeline interattiva in cui le esperienze sono rappresentate come punti su un campo da tennis.
-
-🌗 **Modalità Chiara / Scura**
-Sistema di temi personalizzato con salvataggio delle preferenze dell'utente.
-
-📊 **Skills Scoreboard**
-Indicatori animati delle competenze ispirati alle statistiche tennistiche.
-
-🎾 **Sezione Filosofia del Tennis**
-Uno spazio che collega la mentalità sportiva alla disciplina della programmazione, con riferimenti a campioni come Roger Federer e Jannik Sinner.
-
-📱 **Design Responsive**
-Ottimizzato per desktop, tablet e smartphone.
-
-✨ **Micro-interazioni e Animazioni**
-Effetti hover, ripple al click e un'inclinazione 3D che segue il mouse sulla scheda giocatore dell'hero, più numeri animati che "contano" — tutto nel rispetto dell'impostazione `prefers-reduced-motion`.
-
----
-
-## Tecnologie
-
-Realizzato da zero utilizzando:
-
-* **HTML5** — struttura semantica e metadati SEO
-* **CSS3** — design system personalizzato, variabili, animazioni, Grid e Flexbox
-* **JavaScript (Vanilla)** — interazioni, cambio tema e animazioni
-
-Nessun framework.
-Nessuna dipendenza.
-Solo codice frontend pulito.
-
----
-
-## Struttura del Progetto
-
-```text
 personal-portfolio/
-│
-├── index.html        # Struttura principale del sito
-├── style.css         # Design system e stile
-├── script.js         # Funzionalità interattive
-│
+├── index.html          ← structure and content
+├── style.css           ← design system, themes, responsive
+├── script.js           ← interactive logic, dual court, language
 ├── assets/
-│   ├── images/       # Immagini e risorse visive
-│   └── icons/        # Icone del sito
-│
-└── README.md
+│   ├── images/
+│   │   ├── avatar-placeholder.svg
+│   │   ├── wimbledon.jpg
+│   │   └── roland-garros.jpg
+│   └── icons/
+│       └── favicon.svg
+└── Nicola-Guglielmi-CV.pdf
 ```
 
----
+### Dual Court System
 
-## Esecuzione Locale
+Theme switching is managed by the `data-court="rg"` attribute on the `<html>` element. All Roland Garros styles are overrides in `[data-court='rg'] { ... }`.
 
-Clona il repository:
+| | Wimbledon | Roland Garros |
+|---|---|---|
+| **Palette** | Cream `#F6F4EC` / Green `#0E5C2D` | Midnight blue `#1C2A40` / Clay red `#C24E2B` |
+| **Display font** | Fraunces (optical serif) | Space Mono (monospace) |
+| **Body font** | Inter (sans-serif) | EB Garamond (classical serif) |
+| **Card style** | Thin borders, sharp corners, quiet shadow | 2px borders, rounded corners, 4–6px offset shadow |
+| **Transition speed** | 150ms (grass = snap) | 280ms (clay = build) |
+| **Final score call** | Game · Set · Match | Jeu-set-match |
+| **Hero text** | Precision, speed, reactivity | Endurance, construction, perseverance |
+
+### Language System
+
+Every element with `data-it` / `data-en` attributes is automatically updated on language change by `applyLang()`. Dynamic texts (Hero, About, Philosophy, Stats, stat card backs) are injected by `applyCourt()` through the `COURTS` object in `script.js`.
+
+### Sections
+
+| Anchor | Metaphor | Content |
+|---|---|---|
+| `#hero` | Walking onto court | H1 + role + player card |
+| `#about` | Athlete profile | Bio + interactive stat cards + quote badge |
+| `#experience` | Ranking / Centre Court | SVG court with ball + career milestones |
+| `#education` | Tournament draw | Academic timeline |
+| `#skills` | Scoreboard | Skill bars + DigComp + languages |
+| `#certifications` | Trophy cabinet | 8 Cisco/Cambridge/other certifications |
+| `#projects` | Matches | 3 projects with case studies |
+| `#philosophy` | Philosophy | Text + tennis quotes |
+| `#contact` | Match Point | Email + GitHub + CV |
+
+### Fonts loaded
+
+```
+Fraunces     — Wimbledon display (variable optical serif, opsz 9–144)
+EB Garamond  — Roland Garros body (classical serif, native italic)
+Inter        — Wimbledon body (system sans-serif)
+Space Mono   — Roland Garros display + mono elements (score, chips, meta)
+```
+
+### Deploy
 
 ```bash
-git clone https://github.com/Nicoguglielmii/personal-portfolio.git
+git add .
+git commit -m "update"
+git push
 ```
 
-Apri la cartella del progetto:
-
-```bash
-cd personal-portfolio
-```
-
-Avvia un server locale:
-
-```bash
-python -m http.server 8000
-```
-
-Poi visita:
-
-```text
-http://localhost:8000
-```
+GitHub Pages publishes automatically from the `main` branch. No build step required.
 
 ---
 
-## Deployment
+## Changelog
 
-Il sito è distribuito tramite **GitHub Pages**.
-
-Ogni aggiornamento inviato al branch `main` viene pubblicato automaticamente online.
-
----
-
-## Filosofia
-
-> "The work never stops."
-> — Jannik Sinner
-
-> "You have to believe in the long term plan you have but you need the short term goals to motivate and inspire you."
-> — Roger Federer
-
-Questo portfolio segue lo stesso principio:
-
-**costruire con costanza, migliorare ogni giorno e fidarsi del processo.**
+| Version | Changes |
+|---|---|
+| `v1.2` | Interactive stat cards (3D flip), revealable quote badge, *Jeu-set-match* on Roland Garros, court-specific Stats subtitle, mobile navbar and tennis court layout fixes |
+| `v1.1` | Dual Court System, bilingual IT/EN, Score Strip scroll spy, philosophy section |
+| `v1.0` | Initial release — hero, about, experience, skills, certifications, projects, contact |
 
 ---
 
-## Autore
-
-**Nicola Guglielmi**
-
-Studente di Informatica e Telecomunicazioni
-Andria, Italia
-
-* GitHub: https://github.com/Nicoguglielmii
-* Portfolio: https://nicoguglielmii.github.io/personal-portfolio/
-
----
-
-*"La vittoria appartiene ai più tenaci."*
+<div align="center">
+  <sub>Built with HTML, CSS &amp; vanilla JS · Zero dependencies · Zero build step</sub><br>
+  <sub>Realizzato con HTML, CSS e JS vanilla · Zero dipendenze · Zero build step</sub>
+</div>
