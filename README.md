@@ -38,8 +38,14 @@ personal-portfolio/
 │   │   ├── avatar-placeholder.svg
 │   │   ├── wimbledon.jpg
 │   │   └── roland-garros.jpg
-│   └── icons/
-│       └── favicon.svg
+│   ├── icons/
+│   │   └──  favicon.svg
+│   ├── certificates/
+│   │   ├── cisco-introduction-to-cybersecurity.pdf
+│   │   ├── cisco-python-essentials.pdf
+│   │   ├── cisco-it-essentials.pdf
+│   |   └── b2-inglese.pdf
+├── LICENSE
 └── Nicola-Guglielmi-CV.pdf
 ```
 
@@ -128,8 +134,14 @@ personal-portfolio/
 │   │   ├── avatar-placeholder.svg
 │   │   ├── wimbledon.jpg
 │   │   └── roland-garros.jpg
-│   └── icons/
-│       └── favicon.svg
+│   ├── icons/
+│   │   └──  favicon.svg
+│   ├── certificates/
+│   │   ├── cisco-introduction-to-cybersecurity.pdf
+│   │   ├── cisco-python-essentials.pdf
+│   │   ├── cisco-it-essentials.pdf
+│   |   └── b2-inglese.pdf
+├── LICENSE
 └── Nicola-Guglielmi-CV.pdf
 ```
 
@@ -200,3 +212,5 @@ GitHub Pages publishes automatically from the `main` branch. No build step requi
   <sub>Built with HTML, CSS &amp; vanilla JS · Zero dependencies · Zero build step</sub><br>
   <sub>Realizzato con HTML, CSS e JS vanilla · Zero dipendenze · Zero build step</sub>
 </div>
+
+This project is licensed under the [MIT License](LICENSE).
